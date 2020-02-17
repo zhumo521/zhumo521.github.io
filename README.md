@@ -1,2 +1,2 @@
 # zhumo521.github.io
-hello, world
+个 人 博 客 :)
