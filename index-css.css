@@ -1,0 +1,21 @@
+
+
+body {
+    text-align:center;
+}
+
+#nav {
+    text-align:center;
+}
+#nav ul {
+    display:inline-block;
+}
+#nav ul li {
+    float:left;
+    list-style:none;
+    margin-left:20px;
+}
+#nav a {
+    text-decoration:none;
+}
+
