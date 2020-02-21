@@ -3,7 +3,7 @@
 body {
     text-align:center;
 }
-
+/* 导航栏样式   */
 #nav {
     text-align:center;
 }
@@ -17,5 +17,23 @@ body {
 }
 #nav a {
     text-decoration:none;
+    color: blue;
+}
+
+/* 页脚样式     */
+#footer {
+    text-align:center;
+}
+#footer ul {
+    display:inline-block;
+}
+#footer ul li {
+    float:left;
+    list-style:none;
+    margin-left:20px;
+}
+#footer a {
+    text-decoration:none;
+    color: blue;
 }
 
