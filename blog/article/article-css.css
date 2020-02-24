@@ -1,0 +1,76 @@
+body {
+    margin-left:13%;
+    margin-right:13%;
+}
+
+p {
+    text-indent: 2em;
+}
+
+a {
+    text-decoration:none;
+	color: blue;
+}
+
+#essaytitle {
+    text-align:center;
+}
+
+/* 
+    名称：     checklist 类选择器
+    使用情景：  制作一份简明的清单
+*/
+.checklist {
+    background-color: aliceblue;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    background-image: url("img/cloud.png");
+    background-repeat: repeat;
+}
+
+/*
+    名称：     email 类选择器
+    使用情景：  email便签效果
+*/
+.email {
+    background-color:silver;
+    margin-left:2em;
+    margin-top:2em;
+    padding:1em;
+    background-image: url("img/papper.png");
+    background-repeat: repeat;
+}
+
+/*
+    名称：     page 类选择器
+    使用情景：  模仿一个页面效果
+*/
+.page {
+    background-color: silver;
+    margin-left: 20%;
+    margin-right:20%;
+    margin-bottom:1em;
+    padding: 1em;
+    background-image: url("img/papper.png");
+    background-repeat: repeat;
+}
+
+/*
+    名称：     smalltitle 类选择器
+    使用清景：  小标题
+*/
+.smalltitle {
+    border:1px solid white;
+    border-bottom: 1px dotted black;
+    background-image: url("img/line.png");
+    background-repeat: repeat;
+}
+
+/*
+	重要标记
+*/
+.important {
+	color: red;
+}

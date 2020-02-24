@@ -1,0 +1,149 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../article-css.css" />
+    <title>Install Visual Studio 6.0 on Windows 10</title>
+  </head>
+  <body>
+	<div id="content">
+		<div id="essaytitle">
+            <h3>Install Visual Studio 6.0 on Windows 10</h3>
+            <em>文源：<a href="https://www.codeproject.com/Articles/1191047/Install-Visual-Studio-on-Windows" target="_blank">Kirk Stowell 2017.06.08</a></em>
+            <em>--> 整理：zhumo 2020.02.24</em>
+     </div>
+	 
+	 <div id="essaybody">
+		<p>A tutorial for installing Visual Studio 6.0 on Windows 10</p>
+		<p>
+			This article is a step by step process to install Visual Studio 6.0 on Windows 10. This article references the Enterprise edition of Visual Studio; 
+			however the same approach should work with the Professional version as well. It goes over how to clean up previous attempts if you've tried installing and failed, 
+			goes through runnings the setup wizard, and tells you which settings to disable.
+		</p>
+		<div class="smalltitle"><h4>● Introduction</h4></div>
+		<p>
+			Yes, you read that title correctly, this article describes how to install Visual Studio 6.0 on Windows 10.  Visual Studio 6.0 is still widely used around the globe, and there is a need to provide support for legacy applications and developers who still want to use this platform.  Also, being the old timer that I am, I still like using Visual Studio 6.0 who's interface was specifically designed for C++ development.  Sure, I admit I might be a little resistant to change, but I also find the MFC wizards are more C++ friendly and I like the ability to record macros which was no longer supported with newer versions of Visual Studio.
+		</p>
+		<p>
+			I have read several articles on this subject most are good but seem to be incomplete or missing one or two key elements.  I wanted to document what I have discovered through trial and error to be the best approach for installing Visual Studio 6.0 on later versions of Windows without the need for a 3rd party tool or installer.
+		</p>
+		<div class="smalltitle"><h4>● Clean Up Previous Attempts</h4></div>
+		<p>
+			If you are reading this article, you have no doubt already attempted to install Visual Studio 6.0 on Windows 10 already and it has failed.  If this is the case you will need to do some manual cleanup first before we get started.  Follow these steps to manually clean up any previous installation attempts:
+		</p>
+		<p><strong>Delete Installation Folders</strong></p>
+			<p>You will need to remove any installation folders from previous installation attempts, they are usually located under <i class="important">C:\Program Files (x86)</i> folder for 64-Bit OS and <i class="important">C:\Program Files</i> folder on 32-Bit OS.  Note: If you have installed Visual Studio 2017 make sure you do not touch the C:\Program Files (x86)\Microsoft Visual Studio\2017 folder.</p>
+		<div class="email">
+			<ul>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\Common</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\MSDN</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\MSDN98</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\VB98</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\VC98</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\*.HTM</li>
+				<li>C:\Program Files (x86)\Microsoft Visual Studio\*.TXT</li>
+				<li>C:\Program Files (x86)\Common Files\Microsoft Shared\MSDesigners98</li>
+				<li>C:\Program Files (x86)\Common Files\Microsoft Shared\MSDN</li>
+				<li>C:\Program Files (x86)\Common Files\Microsoft Shared\VS98</li>
+				<li>C:\Program Files (x86)\Common Files\Microsoft Shared\Wizards98</li>
+			</ul>
+		</div>
+		<p><strong>Remove Registry Entries</strong></p>
+		<p>You will need to run regedit.exe and delete the following keys if they exist.</p>
+		<div class="email">
+			<ul>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\DevStudio</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\HTML Help Collections</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\MSVSDG</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Visual Basic\6.0</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Visual Component Manager</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\Visual Modeler</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Microsoft\VisualStudio\6.0</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\DevStudio</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\HTML Help Collections</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\MSVSDG</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Visual Basic\6.0</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Visual Component Manager</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Visual Modeler</li>
+				<li>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\VisualStudio\6.0</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\DevStudio</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\MSVSDG</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\Visual Basic\6.0</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\Visual Modeler</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\VisualFoxPro</li>
+				<li>HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\6.0</li>
+			</ul>
+		</div>
+		<p></p>
+		<p></p>
+		<div class="smalltitle"><h4>● Prepare Setup Files</h4></div>
+		<p>
+			First you are going to need a copy of <i class="important">Visual Studio 6.0</i> setup files.  I am going to assume that you have obtained or own a legal licensed copy of this already.  This article references the <i class="important">Enterprise</i> edition of Visual Studio; however the same approach should work with the <i class="important">Professional</i> version as well, now let's begin.
+		</p>
+		<p><strong>Step 1:</strong></p>
+		<p>
+			You will to need to create a folder either on your desktop or some other location that we can use to copy the installation files to.  The reason for this is some of the files will need to be modified or edited.   Let's create a folder on your desktop and call it <i class="important">Setup</i>.  Go to your installation CD and copy the contents to this folder.  If you have multiple CD's copy each one starting with the first one to the Setup folder, you can skip over files with duplicate names when prompted to overwrite.
+		</p>
+		<p><strong>Step 2:</strong></p>
+		<p>
+			Edit the file called <i class="important">SETUPWIZ.INI</i> and under the section called <i class="important">[setup wizard]</i> change the entry for <i class="important">VmPath=ie4\msjavx86.exe</i>, if this entry does not exist you can skip this step.  We need to remove the value <i class="important">ie4\msjavx86.exe</i> form this entry so it will create an empty environment variable during installation.  This will stop the setup wizard from looking for and installing this very old version of MS Java on our system.  After removing this entry, your INI file entry should now look like this:
+		</p>
+		<p><strong>Step 3:</strong></p>
+		<p>
+			Go to the Setup folder we created on our Desktop and locate the file <i class="important">SETUP.EXE</i>.  Right click on this file and choose <i class="important">Properties</i>.  Select the <i class="important">Compatibility</i> tab and check to box <i class="important">Run this program in compatibility mode for:</i> and set the value to <i class="important">Windows XP (Service Pack 3)</i>.  Also make sure you check the box <i class="important">Run this program as an administrator</i> and press the <i class="important">Apply</i> button.   You can also use the Service Pack 2 option, either setting should work.
+		</p>
+		<div class="smalltitle"><h4>● Run Setup Wizard</h4></div>
+		<p>
+			Now we should be ready to begin the installation.  From our Setup folder on the Desktop, right click on <i class="important">SETUP.EXE</i> and choose <i class="important">Run as administrator</i>.  Once the Setup dialog is displayed, choose all the defaults for each step until you reach the Visual Studio 6.0 Enterprise Setup dialog, then press the <i class="important">Continue</i> button.  Setup will search the system for previously installed components.  Once this process has completed (it may take a while depending on your system) you will be presented with a dialog to choose the installation type, select the <i class="important">Custom</i> setup option to continue.  This is where things will vary depending on what version you are installing Professional or Enterprise.  The screens shots below are from the Enterprise edition.  If you are prompted about installing Source Safe, choose the NO option to continue.
+		</p>
+		<p><strong>Custom Settings</strong></p>
+		<p>
+			At this point you should see the <i class="important">Visual Studio 6.0 Enterprise - Custom</i> dialog.  For this article, we are only installing Visual Basic 6.0 and Visual C++ 6.0, so you can uncheck the options for Visual FoxPro 6.0, Visual InterDev 6.0 and Visual SourceSafe 6.0.  Now select the option for Visual C++ 6.0 and press the <i class="important">Change Option...</i> button to install the UNICODE libraries for MFC.
+		</p>
+		<p><strong>Install Unicode Libraries</strong></p>
+		<p>
+			Although this part is optional, most modern applications need to provide support for multiple languages and you will need this option if you plan on supporting languages such as Chinese, Japanese or Arabic.   When presented with the next dialog, select the option <i class="important">VC++ MFC and Template Libraries</i> and press the <i class="important">Change Option...</i> button, then select the option <i class="important">MS Foundation Class Libraries</i> and press the <i class="important">Change Option...</i> button.  Here we will want to install everything listed so press the <i class="important">Select All</i> button to choose all the options, you should now see the following options:
+		</p>
+		<p>Press the <i class="important">OK</i> button to continue.  Keep pressing the OK button until we get back to the <i class="important">Visual Studio 6.0 Enterprise - Custom</i> dialog.</p>
+		<p><strong>Disable ADO, RDS and OLE DB Providers</strong></p>
+		<p>
+			Select <i class="important">Data Access</i> and press the <i class="important">Change Option...</i> button.  When the Data Access dialog opens, select the ADO, RDS and OLE DB Providers setting and make sure it is unchecked.  You will see a message that says the component is an essential part of the application, you can ignore this warning and press the <i class="important">OK</i> button.  Leaving this option checked will cause the installation to fail on Windows 10.
+		</p>
+		<p><strong>Disable Visual Studio Analyzer</strong></p>
+		<p>
+			The last setting, we need to disable is the Visual Studio Analyzer.  Leaving this option checked will cause the installation to fail.  To disable this, select the <i class="important">Enterprise Tools</i> option and press the <i class="important">Change Option...</i> button.  Uncheck the option for Visual Studio Analyzer on the Enterprise Tools dialog and press the <i class="important">OK</i> button to continue.
+		</p>
+		<p><strong>Finish Installation</strong></p>
+		<p>
+			Now we are ready to start the installation, press the <i class="important">Continue</i> button to begin.  When presented with the <i class="important">Setup Environment Variables</i> dialog just leave the Register Environment Variables box unchecked and press the <i class="important">OK</i> button to continue.  The installer should now be running and installing files onto your hard drive.  Once completed you will be asked to overwrite JIT Settings, select No to continue.  You should now see a Restart Windows dialog indicating your installation was successful.  Close any open applications and press the <i class="important">Restart Windows</i> button to continue your installation.
+		</p>
+		<p>You will be prompted to install MSDN once Windows restarts, follow the prompts to complete the installation.</p>
+		<div class="smalltitle"><h4>● Install Service Pack 6</h4></div>
+		<p>
+			Once you have successfully installed Visual Studio 6.0, you should install the latest Service Pack which is Service Pack 6.  As of the writing of this article, you could still download SP6 from Microsoft's website, <a href="https://www.microsoft.com/en-us/download/details.aspx?id=9183" target="_blank"><i>click here</i></a> for more details.   Extract the files to a folder on your Desktop, and right click on the file <i class="important">SETUPSP6.EXE</i> follow the same steps we did under Step 3 for <i class="important">SETUP.EXE</i> and change compatibility to Windows XP (Service Pack 3), and run the executable as Administrator.  Follow the prompts to complete the installation.
+		</p>
+		<p>
+			Once completed, again follow the steps outlined in Step 3 above and double check the compatibility mode for the .exe files located in <i class="important">C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin\</i> and make sure they are set to Windows XP compatibility.  Visual Studio 6.0 Enterprise edition is ready to use.
+		</p>
+		<div class="smalltitle"><h4>● Useful Add Ons</h4></div>
+		<p>
+			Visual Studio 6.0 had some useful add on programs that you could install to make the user interface a better experience, I have listed a few of them here below.  As of the writing of this article you could still download these tools from <a href="http://www.wndtabs.com/" target="_blank"><i>wndtabs.com</i></a>.
+		</p>
+		<p><strong>WndTabs</strong></p>
+		<p>Provides and file management for the Visual C++ 6 editor.</p>
+		<p><strong>Spelly</strong></p>
+		<p>Smart spell-checker for Visual Studio.</p>
+		<p><strong>Line Counter</strong></p>
+		<p>Easily count source code lines in your Visual Studio projects.</p>
+		<div class="smalltitle"><h4>● Closing Notes and Credits</h4></div>
+		<p>
+			I would like to give credit to the following articles for providing information on cleaning up failed Visual Studio 6.0 installations and preventing old MS Java installation from starting:
+		</p>
+		<p><a href="https://it.toolbox.com/blogs/locutus/how-to-install-visual-studio-6-onto-windows-10-102015" target="_blank"><i>=>How to install Visual Studio 6 onto Windows 10</i></a></p>
+		<p><a href="http://blog.danbrust.net/2015/09/14/installing-visual-basic-studio-6-on-windows-10/#.WUhzTGjyuUl" target="_blank"><i>=>Installing Visual Basic/Studio 6 on Windows 10</i></a></p>
+		<p>If you have any additional comments or tips that would make this article more helpful, please let me know, otherwise thanks and I hope you found this information useful.</p>
+		<br>
+	 </div>
+	</div>
+  </body>
+</html>
