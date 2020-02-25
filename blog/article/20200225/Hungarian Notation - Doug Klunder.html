@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.byteshift.de/msg/hungarian-notation-doug-klunder -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+
+  <title>Hungarian Notation - Doug Klunder</title>
+
+  <style type="text/css"><!--
+    body        { margin: 10px;}
+    *           { font:normal 14px verdana,helvetica,sans-serif; color:#000000;}
+    h1,h2,h3,dt { font-weight:bold;}
+    dt          { float:left; margin-bottom:1em;}
+    dd          { margin-left:7em; padding:0.2em; margin-bottom:1em;
+                  border:solid 1px gray;}
+    pre, pre a:link, pre a:visited
+                { font:normal 14px courier, monospace;
+                  color:navy; text-decoration:none; margin-bottom:0;}
+    #body       { width:800px;
+                  }
+    #main       { margin:2em 0 2em 0;
+                  padding:0.5em; border:solid 1px gray;}
+    a:link,a:visited
+                { text-decoration:underline; color:red;}
+    a:active,a:hover
+                { text-decoration:none; color:red;}
+    div.adsense { position:absolute; left:820px; border:solid 1px gray;}
+  --></style>
+
+</head>
+
+<body>
+
+<div id="body">
+  <p>
+    Troff version at <a href="http://unlser1.unl.csi.cuny.edu/faqs/software-enginering/archive/hungarian">unlser1.unl.csi.cuny.edu</a>
+  </p>
+
+  <p>
+    Bill Campbell and Joel Spolsky (<a href="http://www.joelonsoftware.com/">joelonsoftware.com</a>) state to have be informed personally by Doug Klunder that this text is in the "public domain" - see copyright <a href="http://www.byteshift.de/msg/hungarian-notation-doug-klunder#copyright">info</a>.
+    <a href="http://www.byteshift.de/wer">I</a> claim no rights to my HTML version (<a href="http://www.byteshift.de/">byteshift webdesign</a>/<a href="mailto:info@byteshift.de">info@byteshift.de</a>), yet a backlink would be appreciated, should you want to mirror this page.
+  </p>
+
+<div id="main">
+
+  <h1>HUNGARIAN NAMING CONVENTIONS</h1>
+
+  <h2>Doug Klunder</h2>
+  <h3>January 18, 1988</h3>
+  <h3>September 10, 1991</h3>
+
+
+<h2>1.  INTRODUCTION</h2>
+
+<p>
+  This document describes a set of naming conventions used  by the  IEMIS project in development of the software.  The initial naming conventions where taken from  a  NAMING CONVENTIONS  document  authored  by  Doug  Klunder  at  MicroSoft. These conventions  commonly  go  by  the  name  "Hungarian," referring   both   to  the  nationality  of  their  original developer, Charles Simonyi, and also to the fact that to  an uninitiated  programmer  they  are somewhat confusing.  Once you have gained  familiarity  with  Hungarian,  however,  we believe  that  you  will  find  that  the clarity of code is enhanced.  For convenience, this memo first describes how to use Hungarian, and then describes why it is useful; the general approach is from a programming viewpoint, rather than a mathematical one.
+</p>
+
+<h2>2.<br>
+2.THE RULES</h2>
+
+<p>
+  Hungarian is largely language  independent;  it  is  equally applicable  to  a  microprocessor assembly language and to a fourth-generation database  application  language  (and  has been used in both).  However, there is a little flavor of C, in that arrays and pointers to arrays are not  clearly  dis tinguished.   While  this  may  sound confusing, in practice there is little ambiguity.
+</p>
+<p>
+  &lt; prefix &gt; &lt; base type &gt; &lt; qualifier &gt;
+</p>
+
+<h2>2.1.<br>
+2.1. VARIABLES</h2>
+
+<p>
+The most common type of identifier is a variable name.   All variable  names  are  composed of three elements:  prefixes, base type, and qualifier.  (These are also  referred  to  as constructors,  tag,  and  qualifier).   Not all elements are present in all variable names; the only part that is  always present  is the base type.  This type should not be confused with  the  types  supported  directly  by  the   programming language; most types are application specific.  For example, an 1b1 type could refer to  a  structure  containing  symbol information; a co could be a value specifying a color.
+</p>
+
+<h2>2.1.1.<br>
+2.1.1. Base Types (Tags)</h2>
+
+<p>
+Type that are not defined must be added As the  above  exam- ples  indicate, tags should be short (typically two or three letters) and somewhat mnemonic.  Because of the brevity, the mnemonic  value will be useful only as a reminder to someone who knows the application, and has been told what the  basic types  are;  the  name  will not be sufficient to inform (by itself) a casual viewer what  is  being  referred  to.   For example,  a  co  could  just  as easily refer to a geometric coordinate, or to a commanding officer.  Within the  context of  a  given  application, however, a co would always have a specific meaning; all co's would refer to the same  type  of object,  and  all references to such an object would use the term co.
+</p>
+
+<p>
+One should resist the natural first impulse to use  a  short descriptive  generic  English  term as a type name.  This is almost always a mistake.  One should not  preempt  the  most useful  English  phrases  for the provincial purposes of any given version of a given program.  Chances are that the same generic  term could be equally applicable to many more types in the same program.  How will we know which is the one with the pretty "logical" name, and which have the more arbitrary variants typically obtained by omitting various vowels or by other disfigurement?  Also, in communicating with other pro- grammers, how do we distinguish the generic use of the  com- mon term from the reserved technical usage?  In practice, it seems best to use some abbreviated or form  of  the  generic term,  or  perhaps  an  acronym.   In speech, the tag may be spelled out, or a pronounceable nickname may  be  used.   In time,  the exact derivation of the tag may be forgotten, but its meaning will still be clear.
+</p>
+
+<p>
+As is probably obvious from the above, it is essential  that all  tags used in a given application be clearly documented. This is extremely useful in helping a new  programmer  learn the  code;  it  not  only enables him (or her) to decode the otherwise cryptic names, but it also serves to describe  the underlying  concepts  of  the  program, since the data types tend to determine how the program works.  It is  also  worth pointing  out  that  this  is  not  nearly  as onerous as it sounds; while there may be tens of thousands of variables in a program, the number of types is likely to be quite small.
+</p>
+
+<p>
+Although most types are particular to a  given  application, there  are a few standard ones that appear in many different ones; synonyms for these types should never be used:
+</p>
+
+<dl>
+  <dt>f</dt>
+  <dd>
+  a flag (boolean, logical).  The qualifier  (see  below) should describe the condition that will cause this flag to be set (e.g., fError would be clear if there were no error,  set  if  one  exists).  This tag may refer to a single bit, a byte, or a word;  often  it  will  be  an object  of  type BOOL (defined by the application, usu- ally as int).  Usually the object referred to will con- tain  either  1 (fTrue, TRUE) or 0 (fFalse, FALSE).  In some instances, other values may be  used,  either  for efficiency  or  historical  reasons; such a use usually indicates that another type may be more appropriate.
+  </dd>
+
+  <dt>ch</dt>
+  <dd>
+    a one-byte character. Note that this is  not  adequate for Kanji.
+  </dd>
+
+  <dt>st</dt>
+  <dd>
+  a Pascal-type string (first byte is count, remainder is the  actual characters).  Typically refers to a pointer to the actual memory.  This should be the  most  common type  of  string  used in the Applications group; it is more efficient than an sz (below).
+  </dd>
+
+  <dt>sz</dt>
+  <dd>
+  a zero-terminated string, or a pointer  to  it.   These are most often used to interface to an operating system (or equivalent) that  requires  them;  for  most  other uses,  an  st  is  preferable.  Unfortunately, C string constants are normally zero- terminated, so it takes  a little more effort to use st's; the effort is worth it. The Applications Development compiler  proves  ways  to make strings constants st's.
+  </dd>
+
+  <dt>fn</dt>
+  <dd>
+  a function. Since about the only thing you can do with a  function is take its address, this almost always has a "p" prefix (see below).  For  this  reason,  in  some applications  fn  is  itself  used to mean pointer to a function.
+  </dd>
+
+  <dt>fl</dt>
+  <dd>
+    a file structure supplied by operating systems.
+  </dd>
+</dl>
+
+<p>
+  There are some more types that appear in many  applications; they should only be used for the most generic purposes:
+</p>
+
+<dl>
+  <dt>w</dt>
+  <dd>
+    a word (typically 16 bits).  For most purposes, this isan  incorrect  usage,  since  the  usage of the word isspecific to a particular type of work, and should be sodistinguished.  Correct usages are generally limited togeneric subroutines (e.g., sort an array of words) thatcan  deal  with  a  number  of different types; another common use is in conjunction with  the  prefix  c  (seebelow), to produce a count of words (the size) for someobject.  The exact meaning of w is also somewhat loose;it  sometimes  means  a  signed  quantity and sometimesunsigned.
+  </dd>
+
+  <dt>b</dt>
+  <dd>
+    a byte (typically 8 bits). The same warnings apply  to this as to w.
+  </dd>
+
+  <dt>l</dt>
+  <dd>
+    a long (typically 32 bits).  The same warnings apply to this as to w.
+  </dd>
+
+  <dt>uw</dt>
+  <dd>
+    Unsigned word.
+  </dd>
+
+  <dt>ul</dt>
+  <dd>
+    Unsigned long.
+  </dd>
+
+  <dt>d</dt>
+  <dd>
+    Double (double precision)
+  </dd>
+
+  <dt>r</dt>
+  <dd>
+    Float (single precision)
+  </dd>
+
+  <dt>bit</dt>
+  <dd>
+    a single bit. Typically used to specify bits usedwithin other types. This concept is usually betterhandled with the "f" and "sh" prefixes (see below).
+  </dd>
+
+  <dt>v</dt>
+  <dd>
+    a void.  This corresponds to the C definition of  void, meaning that the type is not specified.  This type will never be used without a "p" prefix since it is not pos sible  to have an unspecified type for a variable; con ceivably there are additional prefixes (e.g., ppv), but such  a  usage  is  unlikely.  It is perfectly valid to assign a pv to a pointer of any  other  type,  or  vice versa.   The major use of this type is for generic sub routines (such as allocate and free)  which  return  or take as arguments pointers of various types.
+  </dd>
+</dl>
+
+<p>
+  There a few types that are used widely within  the  applications group, but may not be applicable to others:
+</p>
+
+<dl>
+  <dt>env</dt>
+  <dd>
+    an environment.  Used  to  implement  non-local  goto's     (SetJmp  and  DoJmp).   The  exact  format  of  an  env (including size), varies from system to system.
+  </dd>
+
+  <dt>sb</dt>
+  <dd>
+    a segment base.  The part of a segmented  pointer  that determines the segment.  The exact implementation varies from system  to system.  These are used directly in some applications  for  efficiency;  the  same  results  can   be obtained  (less  efficiently) through the use of far or huge pointers.
+  </dd>
+
+  <dt>ib</dt>
+  <dd>
+    an offset.  The part of a pointer that  determines  the offset  within  a  segment.  These are used directly in some applications for efficiency; the same results  can be  obtained  (less efficiently) through the use of far or huge pointers.  For the literal-minded,  ib  is  not really  a  new  type  at all; it is simply the prefix i (index)  applied  to  the  type  b  (byte),  with   the viewpoint  that  a  segment  is just an array of bytes. Many people prefer to consider it  a  true  indivisible base type.
+  </dd>
+</dl>
+
+<h2>2.1.2.<br>
+2.1.2. Prefixes (Constructors)</h2>
+
+<p>
+  Base  types  are  not  by  themselves  sufficient  to  fully describe the type of a variable, since variables often refer to more complex items.  The more complex  items  are  always derived  from  some  combination of simple items, with a few operations.  For example, there may be a pointer to an  lbl, or  an  array of them, or a count of co's.  These operations are represented in Hungarian by prefixes; the combination of the prefixes and base type represent the complete type of an entity.  Note that a type may consist of  multiple  prefixes in  addition to the base type (e.g., a pointer to a count of co's); the prefixes are read right to left, with each prefix applying  to the remainder of the type (see examples below). The term constructor is used because  a  new  type  is  constructed  from the combination of the operation and the base type.
+</p>
+
+<p>
+  In theory, new prefixes can be created, just  as  new  types are  routinely  created  for each application.  In practice, very few new prefixes have been created over the  years,  as the  set  that  already  exists  is rather comprehensive for operations likely to be applied  to  types.   Prefixes  that have  been  added tend to deal with the specifics of machine architecture, and are variations on existing prefixes (i.e., different  flavors  of  pointers).  Once can go overboard in refusing to create a new prefix, however; some new  concepts really  are  logically  expressed as prefixes, not types.  A couple of examples of incorrect  usage  in  the  list  below derived from the reluctance to create a new prefix.
+</p>
+
+<p>
+The standard prefixes are:
+</p>
+
+<dl>
+  <dt>p</dt>
+  <dd>
+    a pointer.  A 32 bit address.  (assumed  to  be  a  far pointer).
+  </dd>
+
+  <dt>rg</dt>
+  <dd>
+  an array, or a pointer to it.  The name  comes  from  a mathematical  viewpoint  of  an array as the range of a function (see mp and dn below).  For example,  an  rgch is  an array of characters; a pch could point to one of the characters in the array.  Note that it is perfectly reasonable  to  assign  an rgch to a pch; pch points to the first character in the array.
+  </dd>
+
+  <dt>i</dt>
+  <dd>
+    an index into an array.  For example, an ich is used to index an rgch.
+  </dd>
+
+  <dt>c</dt>
+  <dd>
+    a count.  For example, the first byte of  an  st  is  a count of characters, or a cch.
+  </dd>
+
+  <dt>d</dt>
+  <dd>
+    a difference between two instances of a type.  This  is often  confused  with  a count, but is in reality quite separate.  For example, a cch could refer t the  number of characters in a string, whereas a dch could refer to the difference between the values  'a'  and  'A'.   The confusion  arises  when  dealing  with  indices; a dich (difference between indices into a character array)  is equivalent to a cch (count of characters); which one to use depends on the viewpoint.  This gets most confusing when  dealing  with  base  types  that  are  in  effect indices, though not specifically labelled as such.  For example,  a spreadsheet could have a rw type that indi- cates a row in the spreadsheet; it does not contain the actual  data  for  the  row,  but  is simply a one-word integer specifying the row number.  A type specifying a count  of  rows  (not  rw's)  would  correctly be a drw (difference between row numbers), not a crw  (count  of row numbers).
+  </dd>
+
+  <dt>h</dt>
+  <dd>
+    a handle.  This is often a pointer to a  pointer  (used to  allow  moveable  heap  objects).   The types of the pointers may vary amoung  applications;  the  two  most common cases are a near pointer to a near pointer (h is equivalent to pp) and a far pointer to a far pointer (h is  equivalent to lplp).  Most commonly used for interface to an operating system; within applications, moveable  objects can be handled through huge pointers.  In some systems (e.g., Windows) a handle is not a  pointer to a pointer.  To avoid confusion it may be best to use pp (or lplp) as prefixes when the application is  actu- ally  going  to  do  the indirection, and reserve h for instances in which the handle is just passed on to  the system.   Doing this prevents the most common misuse of h in defining a handle to an array (or  other  implicit pointer type); uses of hsz to imply two indirections to obtain a character are incorrect.  This should properly be done as a psz or, if h must be used, as an hasz (see 'a' prefix below).
+  </dd>
+
+  <dt>gr</dt>
+  <dd>
+    a group, or a pointer to it.  This is similar to an rg,     but is used for variable size objects.  In this case an     index (i) is not particularly useful, since it can  not     be  used  directly  to  obtain  an  object (one can, of     course, write a routine that will take the  gr  and  i,     walk  through  the data in a type- specific manner, and     derive a pointer to the  object  desired).  This  is  a     rarely used prefix, and in some code, grp has been used     instead of gr.
+  </dd>
+
+  <dt>b</dt>
+  <dd>
+    an offset.  This is typically used in conjunction  with a  gr,  in  place  of  an i, in order to get around the problem mentioned above.  This offset is  in  terms  of bytes, so pfoo-(BYTE *)grfoo+bfoo.  As with gr, this is a somewhat rare usage in current  code.   b  originally stood  for  base-relative pointer, but should really be considered to be an offset  within  a  data  structure; true base-relative pointers are just near pointers (p); the base is the segment they are within.
+  </dd>
+
+  <dt>mp</dt>
+  <dd>
+    an array.  This prefix is followed by two types, rather  than  the standard one, and represents the most general  case of an array.  From a  mathematical  viewpoint,  an  array  is  simply  a  function mapping the index to the  value stored in the array (hence mp as an  abbreviation  of  map).   In the construct mpxy, x is the type of the  index and y is the type of  the  value  stored  in  the  array  (hence  mp  as  an abbreviation of map).  In the  construct myxy, x is the type of the index and y is the  type  of the value stored in the array.  In most cases,  the only type that is important  is  the  type  of  the  value;  the  index  is  always an integer with no other  meaning.  In this case, an rg is used; this means  that  the  rgs is equivalent to an mpixx. (This also explains  the weird prefix rg; it is an abbreviation for range).
+  </dd>
+
+  <dt>dn</dt>
+  <dd>
+    an array.  This is used  in  the  rare  case  that  the important  part  of the array mapping is the index, not the value.  dn is an abbreviation for domain.   Only  a few of these are used in the entire Applications group; an example of a plausible use is given in  the  discus- sion of e, below.
+  </dd>
+
+  <dt>e</dt>
+  <dd>
+    an element of an array.  This is  used  in  conjunction with a dn (and is thus just as rare); it is the type of the value stored in a dn.  Just as rgx is equivalent to mpixx,  dnx  is equivalent to mpxex.  An example of use is the native code generation part of the CS  compiler; there  is  a type vr (an acronym for virtual register). A vr is just a simple integer, specifying which  register  to use for various pieces of code output. However, there is quite a  bit  more  information  than  just  a number  that  is  associated  with each register.  This additional data is stored in a structure called an evr; there  is  an  array  of  them  called dnvr.  Thus, the information for a given register can be found with  the expression dnvr[vr].
+  </dd>
+
+  <dt>f</dt>
+  <dd>
+    a bit within a type.  This is  a  new  prefix  that  is  currently  used  only by a few projects, but is now the  approved method for dealing with bits.  It is typically  used  for  overloading an integer type with one or more  bit flags, in otherwise unused portions of the integer.  This  should  not be confused with the f type, in which  the entire value is used to contain the flag. An  example  is  a  scan  mode  (type sm), with possible values  smForward and smBackwards.  Since the basic  mode  only  requires  a  few  bits (in this case only one bit), the  remainder of a word can be used to encode other  information.   One  bit  is  used  for  fsmWrap, another for  fsmCaseInsens.  Here the f is a prefix to the sm  type,  specifying only a single bit is used.
+  </dd>
+
+  <dt>sh</dt>
+  <dd>
+    a shift amount.  This is another  new  prefix  used  to deal  with  bits  within other types (complementing the "f" prefix); it specifies the location within the  type by a bit number (rather than the bit mask which the "f" prefix specifies).  It  actually  is  followed  by  two types; the first type is the type being shifted (almost always an f), and the second type is the type the  bits are  stored  within.   Continuing  the above example of scan modes,  if  fsmWrap  has  a  value  of  4000  hex, shfsmWrap would have the value of 14.
+  </dd>
+
+  <dt>u</dt>
+  <dd>
+    a union.  This is a rarely used prefix; it is used  for variables that can hold one of several types.  In practice this becomes unwieldy.  An example  is  a  urwcol, which can hold either a rw type or a col type.
+  </dd>
+
+  <dt>a</dt>
+  <dd>
+    an allocation.  This is a rarely  used  prefix;  it  is used  to  distinguish between an array and a pointer to it.  Thus, sz is a pointer to a null-terminated  string and  asz  is  the  actual allocated space.  a is almost invariably used in conjunction with a pointer-type prefix,  in  order  to  allow  the  pointer to be explicit (rather than implicit, as with an sz).   It  is  essentially the inverse of a p prefix, so pasz is equivalent to sz.  Its best use is with the h prefix;  hasz  is  a handle  to  a  null-terminated  string.   Most  of  the current Applications code (incorrectly) omits the a.
+  </dd>
+
+  <dt>v</dt>
+  <dd>
+    A global variable
+  </dd>
+</dl>
+  
+<h2>2.1.2.1.<br>
+2.1.2.1. Some Examples</h2>
+
+<p>
+Since the prefixes and base types both appear in lower case,
+with no separating punctuation, ambiguity can arise.  Is pfc
+a tag of its own (e.g., for a private first class), or is it
+a  pointer to an fc?  Such questions can be answered only if
+one is familiar with the specific types used in  a  program.
+To avoid problems like this it is often wise to avoid creat-
+ing base type names that begin with any of the  common  pre-
+fixes.   In  practice, ambiguity does not seem to be a prob-
+lem.  The idea of additional punctuation to remove the ambi-
+guity has been shown to be impractical.
+</p>
+
+<p>
+The following list contains both common and rarer usages:
+</p>
+
+<dl>
+  <dt>pch</dt>
+  <dd>
+    a pointer to a character.
+  </dd>
+
+  <dt>ich</dt>
+  <dd>
+    an index into an array of character.
+  </dd>
+
+  <dt>rgst</dt>
+  <dd>
+    an array of Pascal-type strings.   Hungarian  is not  sufficient  in  itself  to indicate whether this is an array of characters or  an  array  of pointers;  since  strings  are  usually variable length, it is probably a safe bet that  this  is an array of pointers to the actual characters.
+  </dd>
+
+  <dt>grst</dt>
+  <dd>
+    a group of Pascal-type  strings.   As  with  the above  example, this could be either an array of characters or of pointers; since it is a gr, not an  rg, it is probably safe to assume that it is an array of characters.
+  </dd>
+
+  <dt>bst</dt>
+  <dd>
+    an offset to a particular Pascal-type string  in a grst.
+  </dd>
+
+  <dt>phpx</dt>
+  <dd>
+    a near pointer to a huge pointer to an object of type x.
+  </dd>
+
+  <dt>pich</dt>
+  <dd>
+    a near pointer to  an  index  into  a  character array.   A common use for something like this is passing a pointer as a parameter to  a  function so that a return value can be stored through the pointer; pich would be extremely unlikely to  be used   in   an  expression  without  indirection (pich+=2 is probably gibberish;  (*pich)+=2  may well be meaningful).
+  </dd>
+
+  <dt>en</dt>
+  <dd>
+    probably a base type (such as an  entry).   Conceivably  it  is an element for an array indexed     by an n; only knowledge of the  application  can  tell for certain.
+  </dd>
+
+  <dt>hrgn</dt>
+  <dd>
+    handle to a r region.  Again there  is  ambiguity; this  could  be  interpreted  as  a handle to an array of n's or a huge pointer to  an  array  of n's.
+  </dd>
+
+
+  <dt>dx</dt>
+  <dd>
+    length of a horizontal line (difference  between x coordinates).
+  </dd>
+
+  <dt>rgrgx</dt>
+  <dd>
+    a two-dimensional array  of  x's  (an  array  of arrays of x's).
+  </dd>
+
+  <dt>mpminpfn</dt>
+  <dd>
+    an array of pointers to  functions,  indexed  by mi's.   For example, an mi could be a menu item, and this array  could  be  used  for  a  command dispatch.   Again,  context  makes  the  parsing clear; this could equally well be interpreted as an  array  of  fn's  (perhaps  friendly  nukes), indexed by mip's (perhaps missile placements).
+  </dd>
+
+  <dt>pv</dt>
+  <dd>
+    pointer to a void.  Could be used as an argument to Free.
+  </dd>
+
+  <dt>hrgch</dt>
+  <dd>
+    huge pointer to an array of  characters.   Could instead  be  interpreted as a handle to an array of characters, depending on the application.
+  </dd>
+</dl>
+
+<h2>2.1.3.<br>
+2.1.3. Qualifiers</h2>
+
+<p>
+  While the prefixes and base type  are  sufficient  to  fully specify  the  type of a variable, this may not be sufficient to distinguish the vable.  If there are two variables  of the same type within the same context, further specification is required to disambiguate.  This is done with  qualifiers. A  qualifier is a short descriptive word (or facsimile; good English is not required) that indicates what the variable is used  for.  In some cases, multiple words may be used.  Some distinctive punctuation should be used to separate the qual ifier  from  the type; in C and other languages that support it, this is done by making the first letter of the qualifier upper-case.   (If  multiple words are used, the first letter of each should be upper-case; the mainder  of  the  name, both type and quali always lower-case.  There is one special case to watch out for; defined constants  specifying the  size  of  a  type are often of the form cbFOO or cwFOO, where foo is the type.  Strictly speaking only the F in  FOO should  be  capitalized,  but  the incorrect usage is fairly common.)
+</p>
+
+<p>
+  Exactly  what  constitutes  a  naming  context  is  language specific;  within C the contexts are individual blocks (com pound statements), procedures, data structures  (for  naming fields),  or  the  entire program (globals).  As a matter of good programming style, it is not recommended that hiding of names  be  used;  this means that any context should be con sidered to include all of its subcontexts.  (In other words, don't  give  a local the same name as a global.) If there is no conflict within a given context (only one variable  of  a given  type),  it  is  not necessary to use a qualifier; the type alone serves to identify the variable.  In  small  con texts  (data  structures  or  small procedures), a qualifier should not be used except in case  of  conflict;  in  larger contexts  it  is  often  a good idea to use a qualifier even when not necessary, since later modification of the code may make  it necessary.  In cases of ambiguity, one of the vari ables may be left with no qualifier;  this  should  only  be done  if  it  is clearly more important than the other vari ables of the same type (no qualifier implies primary usage).
+</p>
+
+<p>
+  Since many uses  of  variables  fall  into  the  same  basic categories,  there  are  several  standard  qualifiers.   If applicable, one of these should be used, since they  specify meaning  with no chance of confusion.  In the case of multi ple word qualifiers, the order of the words is not  crucial, and  should  be chosen for clarity; if one of the words is a standard qualifier, it should  probably  come  last  (unfor tunately,  this  suggestion  is  by  no means uniformly fol lowed).  The standard qualifiers are:
+</p>
+
+<dl>
+  <dt>First</dt>
+  <dd>
+    the first element in a  set.   This  is  usually     used   with   an   index  or  a  pointer  (e.g.,     pchFirst), referring to the first element of  an     array  to  be  dealt  with.  The index may be an     implied  index  (as  with  a  rw   type   in   a     spreadsheet).
+  </dd>
+
+  <dt>Last</dt>
+  <dd>
+    the last element in a set.  This is usually used with  an  index  or  a  pointer (e.g., pchLast), referring to the last element of an array to  be dealt  with).   Both  First  and  Last represent valid values (compare with Lim below); they  are often  paired,  as  in  this  common  loop:
+    <pre>  for(ich=ichFirst; ich&lt;=ichLast; ich++)
+    </pre>
+  </dd>
+
+  <dt>Lim</dt>
+  <dd>
+    the upper limit of elements in a set.   This  is not  a  valid  value;  for all valid values f x, x&lt;xLim.  xLim is equivalent  to  xLast+1;  xLimxFirst  is  the dx which specifies the number of elements in the set.  Thus, the  following  code is  typical  (cp  is  a  type that is an implied
+index):
+    <pre>  for (cp=cpFirst,cpLim=cpFirst+dcp; cp&lt;cpLim; cp++)
+    </pre>
+  </dd>
+
+  <dt>Min</dt>
+  <dd>
+    the first element in a set.  This is very  similar to First, but typically refers to the actual first element of an array, not just the first to be  dealt with.  It is also more often used with a pointer than an index, since ixMin tends to be
+0.
+  </dd>
+
+  <dt>Max</dt>
+  <dd>
+    the upper limit of elements in a set.   This  is not  a  valid  value; for all valid values of x, x&lt;xMax.  Max is typically used for  compile-time constants, or variables that are set a load time and not changed.  Very often, ixMax is  used  to specify the number of elements in an rgx array.
+  </dd>
+
+  <dt>Mac</dt>
+  <dd> the current upper limit of elements  in  a  set. This  is 
+  very similar to Max, but is used where the upper limit varies over time (such 
+  as for  a variable  length  structure, or a growing heap). This is not a valid 
+  value; it  is  often  paired with   Min,   as   in  this  common  loop:
+    <pre>      for(pch=pchMin; pch)
+    </pre>
+  </dd>
+
+  <dt>Mic</dt>
+  <dd>
+    the current first element in  a  set.   This  is very  similar  to Min, but is used where the low value varies over time (such as for a heap  that grows  downward in memory).  Like Min, this is a valid value.  Since few  things  grow  downward, this is not often used.
+  </dd>
+
+  <dt>Most</dt>
+  <dd>
+    the last element in a set.  Identical  to  Last, but  used  when  paired with a Min.  Can also be viewed as Mac-1.  This is a new addition to  the standard, and is thus not yet much used. Typical usage would be:
+  <pre>    for (pch=pchMin;  pch&lt;=pchMost; pch++)
+  </pre>
+  </dd>
+
+</dl>
+
+<p>
+Note that the above qualifiers have a  strict  relationship:
+Min&lt;=Mic&lt;=First&lt;=Last&lt;=Most&lt;Lim&lt;=Mac&lt;=Max
+</p>
+
+<dl>
+  <dt>Sav</dt>
+  <dd>
+    a temporary saved value.  Often used as part  of error recovery, or just when temporarily modifying variables that need to be restored.  Typical usages include:
+
+    <pre>  envSav=envMem;
+  if (SetJmp(&amp;envMem))
+  
+  
+  envMem=envSav;
+  rwSav=rwAct;
+  for (rwAct=rwFirst; rwAct&lt;=rwLast; rwAct++)
+  
+  rwAct=rwSav;
+    </pre>
+  </dd>
+
+  <dt>Nil</dt>
+  <dd>
+    a special illegal value.   Typically  used  with defined  constants,  this is a value that can be distinguished from all legal  values.   This  is often 0 or -1, but may be something else in some circumstances.
+  </dd>
+
+  <dt>Null</dt>
+  <dd>
+    the 0 value.  Typically used with  defined  con- stants,  this  value  is  always 0, typically an illegal value.  May or may not be equivalent  to Nil.  In order to avoid confusion, it is usually best not to have both Nil and Null  defined;  if both do exist, the differences should be clearly delineated.
+  </dd>
+
+  <dt>T</dt>
+  <dd>
+    a temporary value.  This is often convenient  to distinguish the second value in a given context. However, unless it is a truly  temporary  usage, it  is  often  better  to use a more descriptive qualifier.  (After all, what  happens  when  you add  the third variable of the same type).  Some particularly poor usages stack the  T's  up,  to produce  variables  such as pchTT or pchT1; this is almost certainly  an  indicator  that  better qualifiers should be used.
+  </dd>
+
+  <dt>Src</dt>
+  <dd>
+    a source.  Typically paired with Dest  and  used in transfer operations.
+  </dd>
+
+  <dt>Dest</dt>
+  <dd>
+    a destination.  Typically paired  with  Src  and used in transfer operations.
+  </dd>
+</dl>
+
+<h2>2.1.4.<br>
+2.1.4. Structure Members</h2>
+
+<p>
+  When possible, structure members  are  named  the  same  way variables  are.  Since the context is small (only the structure), conflicts are less likely, and qualifiers  are  often neither  needed  nor used.  If the language does not support separate contexts  for  each  structure  (e.g.,  masm),  the structure  name  is  appended  to the member as a qualifier. Thus, the following declarations are equivalent (the one  on the left is for C, the one on the right for masm):
+</p>
+
+<pre>  typedef struct FOO
+  struc {
+          pchFoo  dw      ?
+          char    *pch;
+          wFoo    dw      ?
+          int     w;
+          rgchFoo db      10
+          dup(?)
+  } FOO;
+</pre>
+
+<p>
+  In some cases, one type is a  special  instance  of  another type.   When  this  is  the case, the special instance names should consist of the base instance name plus  a  character. For  example, in Word there is a base type of CHR (character run); special instances are CHRF  (formula  character  run), CHRT (tab character run), and CHRV (vanished character run).
+</p>
+
+<h2>2.2.<br>
+2.2. PROCEDURES</h2>
+
+<p>
+  Unfortunately, the simple rules used for variable  names  do not  work  as  well  for  procedures.  Whereas the type of a variable is always  quite  important,  specifying  how  that variable  may  be used, the important part of a procedure is typically what it does; this is  especially  true  for  procedures that don't return a value.  In addition, the context for procedures is usually the entire program,  so  there  is more  chance  for  conflict.   To handle these issues, a few modifications are made to the simple rules:
+</p>
+
+<ol>
+  <li>
+    All procedure names  are  distinguished  from  variable
+names  by  the  use  of some standard punctuation; in C
+this is done by capitalizing the first  letter  of  the
+procedure  name  (all variable names begin with a lower
+case type).
+  </li>
+  <li>
+    If the  procedure  returns  a  value  (explicitly,  not
+implicitly  through  pointer parameters), the procedure
+name begins with the type of the value returned; if  no
+value is returned, the name must not begin with a valid
+type.
+  </li>
+  <li>
+    If the procedure is a true function  (operating  mainly
+on its parameters and returning a value, with few or no
+side effects), it is standard  to  name  the  procedure
+AFromBCD..., where A is the type of the value returned,
+and B, C, D, etc. are the types of the objects referred
+to  by  the  parameters.   In some cases, the types are
+exactly the types of the parameters (e.g., CmFromIn(in)
+would  convert inches to centimeters).  In other cases,
+the types are the base types of the  parameters  (e.g.,
+DxFromWnd(pwnd)  could be used to obtain the width of a
+window).  Some projects always use the  full  parameter
+type  (the previous example would be DxFromPwnd(pwnd)).
+Both methods (full type and base  type)  are  accepted.
+As  another  simple example, returning the binary value
+of an ASCII string would be done by a procedure  called
+WFromSt (equivalent to the standard C atoi).
+  </li>
+  <li>
+    If the procedure is not a  true  function,  follow  the
+type (if any) with a few words describing what the procedure does (a verb followed by an  object  is  usually
+good).   Each  word should be capitalized.  If the type
+of a parameter is important,  it  may  be  appended  as
+well;  in  many cases this is unnecessary, and may even
+be confusing (if the type is not truly important).
+  </li>
+  <li>
+    If the procedure operates on an object, the type of the
+object  should  be appended to the name; as in 3), this
+may be different than  the  types  of  the  parameters,
+though  it  is  probably  related in some manner.  Pro-
+cedures like this are commonly used when programming in
+a  class-like  (or  object- oriented) manner; typically
+the first parameter to such a procedure is a pointer to
+the  object  to be manipulated.  For example, you could
+have  procedures  like  InitCa(pca,  ...),  InitDd(pdd,
+...), etc.
+  </li>
+</ol>
+
+<h2>2.2.1.<br>
+2.2.1. Macros</h2>
+
+<p>
+  Macros should be handled exactly the same way as procedures; for historical reasons, you may find some macros that do not follow the correct rules (e.g., min, bltbyte).
+</p>
+
+<h2>2.2.2.<br>
+2.2.2. Labels</h2>
+
+<p>
+  Labels can be considered to be a variant on procedures; they are  after all effectively identifiers specifying a chunk of code.  Within C, they are  named  similarly  to  procedures; they  obviously  neither return a value nor take parameters, so no types are specified.  The first letter is upper  case, and  the name itself is just a few words specifying the condition that causes the label to be reached (either  by  falling  though,  or via a goto).  Since the context of a label is limited to its procedure, these  can  be  pretty  generic terms; typical examples are GotErr, OutOfMem, LoopDone.
+</p>
+
+<p>
+  Within assembly, labels are somewhat trickier.   First  off, there  are  many more labels used.  Second, depending on the assembler, all labels may have global  (or  at  least  filewide)  context.   To  deal with these constraints, the rules may be modified somewhat.   For  labels  that  are  inserted solely   because   of  assembler  constraints  (i.e.,  jumps corresponding to high level control flow  constructs),  temporary  labels  should  be  used.  If the assembler supports true  temporary  labels  (valid  only  within  the   current
+</p>
+
+<p>
+  procedure,  or  up to the next global label), they should be used, in ascending numeric order. If true  temporary  labels are  not available, the most common convention is to use the initials of the procedure, followed by a number, in  ascending order. Of course, gaps should be left between numbers to facilitate later modification (initially setting  to  multiples  of  10 works well).  This is far from perfect, and can create conflicts between procedures that have the same  initials;  some  people prefer to give all labels, temporary or not, full  English  names  for  clarity.   For  labels  that correspond  to  true C labels, C conventions can be used; to avoid conflict, it is often useful to prefix with  the  procedure initials.
+</p>
+
+<h2>2.3.<br>
+2.3. DEFINED CONSTANTS</h2>
+
+<p>
+  As much as possible, defined constants should look just like variables  of  the  same type.  For many types, defined constants will exist for the Nil, Max, Min, and/or Last values. The program text will read exactly as if they are variables. There are three common exceptions, all  originating  in  the mists of time, and unlikely to change soon.  NULL is defined to be 0, and is used with all pointer types; TRUE and  FALSE are  defined  to  be  1  and  0,  and  are used with f types (correct Hungarian, practiced by some  projects  uses  fTrue and fFalse instead of TRUE and FALSE).
+</p>
+
+<p>
+  There are often types for which each value is a defined constant; these are essentially equivalent to enumeration types supported by some languages (including  some  variations  of C).   These  are typically types used for table- drive algorithms, for specifying options to a procedure, or specifying possible  return  values.  Note that these types are in fact separate types; they are not all examples of the same  type, nor  are they values for the w type.  Since they are special purpose (you can't pass an option for procedure  x  to  procedure  y  with  any meaning), they must be a new type.  You can of course use your own method to name these types; it is often  convenient  to just use the initials of the procedure that takes or returns the type (watching out for conflicts). since  they are type quantities, the type must be present in the names; possible values for colors  are  not  RED,  BLUE, YELLOW,  GREEN, BLACK, etc., but rather could be coRed, coBlue, coYellow, coGreen, coBlack, etc.
+</p>
+
+<h2>2.4.<br>
+2.4. STRUCTURES</h2>
+
+<p>
+  Each structure is almost by definition  its  own  type,  and should  be  names  as a type (two or three letters with some possible mnemonic value).  By convention in  C,  the  entire type name is capitalized in the definition of the type.  The same rules apply to unions.  Many of the  projects  find  it convenient  to  include  typedef's  for each structure type; this means that the word struct is not included in  declarations,  and allows the redefinition of the type to an array, or even a simple type, without  having  to  change  all  the declarations.   Typedef's  may  also  be  suitable  for non- structure types, particularly any that are not simple int's.
+</p>
+
+<h2>3.<br>
+3.ADVANTAGES OF HUNGARIAN</h2>
+
+<ul>
+  <li>
+    Before adopting a set of conventions, there are  always  two questions that must be answered:
+  </li>
+  <li>
+    Why have conventions at all?
+  </li>
+  <li>
+    Why use this particular set of conventions?
+  </li>
+</ul>
+
+<p>
+  The two questions are actually very closely related; answering  the  first  will  usually give an answer to the second, since knowing the goals allows one  to  see  how  closely  a solution  will meet the goals.  For naming conventions, many of the goals are well-known, if not often  formalized;  most good  programmers  already  attempt  to  meet the goals in a variety of ways.
+</p>
+
+<h2>3.1.<br>
+3.1. MNEMONIC VALUE</h2>
+
+<p>
+  An important need in naming objects  in  a  program  is  the ability  to  remember  what  the  name  is, so that when the objects used, the programmer can quickly determine the  name (which  is the only way it can be used). Traditionally, this need has been met by using descriptive names for  variables; for  a  given programmer working continually on a given program this is usually  adequate.   Problems  arise,  however, when  a  different  programmer works on the project, or when the same programmer returns after a hiatus.  What  was  once descriptive  now has to be relearned.  Hungarian helps some- what in this respect, though it is not complete.  The  first part  of  a  variable  name can always be determined with no effort (it is the type), and if it is a  standard  use,  the
+</p>
+
+<p>
+  qualifier  can  also  be  determined (since it is one of the standard qualifiers).  Non-standard qualifiers and procedure names can not be immediately determined; however, the situation is certainly no worse than the  traditional  situation, since  the  qualifier or procedure name has as much descriptive value as a traditional name.  Furthermore, since  there are  fewer names that must be remembered (since one need not remember the standard ones), it is easier to remember them.
+</p>
+
+<h2>3.2.<br>
+3.2. SUGGESTIVE VALUE</h2>
+
+<p>
+  At least as important as being able to go from an object  to a name (the mnemonic value) is the ability to go from a name to an object (the suggestive value).  This is most important when  reading  code  written  by  someone else; this affects almost all programs today, either  because  multiple  people are  working on them, or because they are outgrowths of earlier programs.  Again, the traditional approach has been  to use  names  descriptive  in  some  manner;  Hungarian  again improves the situation somewhat.  For the  relatively  small cost of learning the types used in a given program, a reader gains a much better understanding of what the program  does, since the types used in a statement often help determine the meaning of the statement.  This is enhanced even more by the use  of standard qualifiers; again, the non-standard qualifiers are at least as clear as the traditional names.
+</p>
+
+<h2>3.3.<br>
+3.3. CONSISTENCY</h2>
+
+<p>
+  Partially an aesthetic idea ("the code looks better"),  this is  also  an  important concept for the readability of code. Just as Americans often have an extremely difficult job following  the action of Russian novels, since the same charac- ter goes by many different names, a programmer will  have  a difficult  time  understanding code in which the same object is referred to in unrelated ways.  Similarly, it is  confusing  to  find  the same name referring to unrelated objects. This is a serious problem  in  traditional  contexts,  since English  is  a  rich enough language to have many terms that roughly describe the same concept, and also terms  that  can describe multiple concepts. This problem is exacerbated when programmers resolve name conflicts by use of  abbreviations, variant  spellings,  or  homonyms;  all of these methods are prone to accidental misuse, through typographical errors  or simple  failure to understand subtle differences.  Hungarian resolves this problem by the use of  detailed  rules;  since all  names  are  created using the same rules, they are consistent in usage.
+</p>
+
+<h2>3.4.<br>
+3.4. SPEED</h2>
+
+<p>
+  It is desirable to minimize the  amount  of  time  spent  on determining  names;  in  a  sense this is wasted time, since getting the "right" name doesn't improve the program's efficiency  or  functionality.   Since  the  traditional  naming methods rely on good descriptions to meet the above goals, a programmer  has  to spend a goodly amount of time to in fact invent good descriptions; speedy name decisions  are  likely to  result  in  unmnemonic,  unsuggestive,  or  inconsistent names.  In Hungarian, on the other hand, only a few name the same  names,  everyone's code will be similar, and therefore easy to read and modify.   Traditional  naming  schemes  are extremely unlikely to reach this goal, since English has far too many ambiguities  to  expect  different  individuals  to describe  things  in  identical terms.  It would be naive to expect that Hungarian will cause all  programmers  to  write code identically, or even to use identical names.  The names are likely to be much more similar, however, since they  are composed using the same rules, with the same types and standard qualifiers.
+</p>
+
+<h2>4.<br>
+4.CONCLUSION</h2>
+
+<p>
+  Hungarian is a useful set of rules  used  to  determine  the names  used in a program.  There is no denying that it takes a little time to become familiar with it; true enlightenment comes only with effort.  We strongly believe the results are worth the effort.  The Applications  Development  group  has been using Hungarian since its inception in 1981, and people at Xerox PARC were using it even  earlier.   The  consistent use  of  Hungarian  makes the programmer's job easier; it is both easier to write in Hungarian (there are fewer superfluous  choices to make) and easier to read and modify existing code. The set of conventions is sufficient to deal with most current  situations  by itself; it has also proven adaptable to changes in the programming environment. Perhaps the  best testimonial  for Hungarian is the fact that a number of pro- grammers have continued to use Hungarian even after  leaving the  jobs  in which they encountered it; they have felt that the advantages were  great  enough  to  warrant  the  effort necessary  to  promote  its use elsewhere.  We hope that you will feel this way as well, once you  become  familiar  with Hungarian's usage.
+</p>
+
+<h2>REVISION HISTORY</h2>
+<pre>Date        Action
+
+09/04/87    Original (DBK)
+
+09/15/87    Moved to word; added some rarer types  and  pre-
+            fixes and cleaned up other definitions  in
+            response to feedback. (DBK)
+
+01/18/88    Added v type, sh prefix, and explanation  of  ha
+            and 1 as prefixes applied to p for huge and far
+            pointers. Also clarified use of  From  in  pro-
+            cedure names. (DBK)
+
+04/10/90    Moved to nroff, changed references to OSAC  to
+            IEMIS (WKC)
+
+</pre>
+
+</div>
+
+<h1>Copyright info</h1>
+<pre><a name="copyright"></a>
+Date: Fri, 20 Sep 91 15:12:53 -0700
+From: sgihbtn!billc@uunet.UU.NET (Bill Campbell)
+Message-Id: &lt;9109202212.AA04579@shared&gt;
+To: uunet!umiacs.UMD.EDU!dalamb@uunet.UU.NET
+Subject: Re: Hungarian Notation References
+...
+I have just talked with Doug Klunder at Microsoft.  He says that
+publication of his paper is perfectly okay, they have not copyrighted
+it. It is, of course, their preference that the document be
+respresented as his/MS's work.
+
+From: "Joel Spolsky" &lt;spolsky@fogcreek.com&gt;
+To: &lt;info@byteshift.de&gt;
+Sent: Thursday, May 12, 2005 12:57 AM
+Subject: RE: <a href="http://www.joelonsoftware.com/articles/Wrong.html">joelonsoftware.com/articles/Wrong.html</a> - Hungarian Notation/D. Klunder: link to clean HTML version
+...
+Also I have heard personally from Doug
+Klunder himself that this file is in the "public domain".
+
+</pre>
+
+  byteshift: <a href="http://www.byteshift.de/">webdesign in berlin</a> <a href="http://www.byteshift.de/wer">imprint</a> <a href="http://generator.lorem-ipsum.info/">Lore Ipsum</a>
+</div>
+
+
+
+
+</body></html>
