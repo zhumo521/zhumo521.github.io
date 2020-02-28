@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>C/C++中union的一种编程手法</title>
+<style>
+.keyword{color:rgb(0,0,255);}
+.comment{color:rgb(0,128,0);}
+.pp{color:rgb(0,0,255);}
+#code{ 
+	border:1px solid #000;
+	padding-left: 1em;
+	margin-right: 17%;
+	background-color: rgb(231, 234, 237);
+	}
+#ills{
+	border:1px solid #000;
+	padding-left: 1em;
+	margin-right: 17%;
+	margin-bottom: 1em;
+	background-color: rgb(231, 234, 237);
+}
+#etitle{
+	text-align: center;
+}
+a{text-decoration: none; color: blue;}
+.important{color:red;}
+</style>
+<body>
+<h3 id="etitle">C/C++中union的一种编程手法</h3>
+<p>（注：本页面中代码页由<a href="http://www.ucancode.net/Visual_C_MFC_Samples/Convert-C-CPP-Code-file-to-HTML-Free.htm" target="_blank"><i>cpphtml</i></a>程序生成）</p>
+<P>下面的程序，使用结构化的方式模拟了<a href="https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=vs-2019" target="_blank"><i>MFC(Microsoft Foundation Classes)</i></a>中消息映射的部分机制，通过这个实现中的一些编程手法，来展现了C/C++中的union(联合)的特殊用法。</P>
+<p>理解这种用法的关键是<i class="important">MessageMapFunctions是共用体(union)，所以当执行mmf.pfn = msg_entry.pfn;后，该结构中的所有成员其实值都是相同的，都为msg_entry.pfn</i></p>
+
+<div id="ills">
+<pre style="font-family:courier;font-size:10pt"><span class=comment>/*
+    程序逻辑简图：
+                                  /  msg (message id)
+       [GUI] -&gt; [Operator System] -  param1
+                                  \  param2
+                                  \  ...    
+                                        ||(传递到mfc framework)
+                                        ↓↓
+                                   +-----------------+
+                                   |    +----------+ |
+                                   |    |msg_entry0| |
+                                   |    +----------+ |
+                                   |    |msg_entry1| |    (hit)          / (*mmf.pfn_vv)() 
+                                   |    +----------+ |   ------&gt;         / (*mmf.pfn_ii)(param1); 
+                                   |    |msg_entry2| |    call (*pfn)()  - (*mmf.pfn_iii)(param1, param2); 
+                                   |    +----------+ |   ------&gt;         \ (*mmf.pfn_vcsi)(&quot;my value is: &quot;, param2); 
+                                   |    |msg_entry3| |                   \ ...
+                                   |    +----------+ |                 (union)
+                                   |    |   ...    | |
+                                   |    +----------+ |
+                                   | mfc message map |
+                                   +-----------------+
+                                      (loop search)
+*/</span>                                 </pre></body>
+</div>
+<div id="code">
+<pre style="font-family:courier;font-size:10pt">
+<span class=pp>#include</span> &lt;iostream&gt;
+<span class=pp>#include</span> &lt;string&gt;
+<span class=pp>#include</span> &lt;vector&gt;
+<span class=keyword>using</span> <span class=keyword>namespace</span> std;
+
+<span class=comment>//////////////////////////////////////////////////////////////////
+</span><span class=comment>// prepare some data structure
+</span>
+<span class=keyword>enum</span> MessageFunctionsFlag {
+    msgff_vv,
+    msgff_ii,
+    msgff_iii,
+    msgff_vcsi,
+    <span class=comment>// ... 
+</span>};
+
+<span class=keyword>typedef</span> <span class=keyword>void</span> (*PMSG) (<span class=keyword>void</span>);
+<span class=keyword>typedef</span> <span class=keyword>union</span> MessageMapFunctions msg_funs;
+<span class=keyword>union</span> MessageMapFunctions {
+    PMSG pfn;        <span class=comment>// 通用message处理函数指针
+</span>
+    <span class=comment>// 具体message处理函数指针
+</span>    <span class=keyword>void</span> (*pfn_vv) (<span class=keyword>void</span>);
+    <span class=keyword>int</span> (*pfn_ii) (<span class=keyword>int</span>);
+    <span class=keyword>int</span> (*pfn_iii) (<span class=keyword>int</span>, <span class=keyword>int</span>);
+    <span class=keyword>void</span> (*pfn_vcsi) (<span class=keyword>const</span> string, <span class=keyword>int</span>);
+    <span class=comment>// ...
+</span>};
+
+<span class=comment>// simple message entry
+</span><span class=keyword>typedef</span> <span class=keyword>struct</span> MessageEntry msg_entry;
+<span class=keyword>struct</span> MessageEntry {
+    <span class=comment>// ...
+</span>    string msg_content;
+    <span class=keyword>int</span> msg_flag;
+    PMSG pfn;
+
+    <span class=comment>// constructor function
+</span>    MessageEntry() : msg_content(&quot;&quot;), msg_flag(-1), pfn(NULL) { }
+    MessageEntry(<span class=keyword>const</span> <span class=keyword>char</span>* content, <span class=keyword>int</span> flag, PMSG handler)
+        : msg_content(string(content)), msg_flag(flag), pfn(handler) { }
+};
+
+<span class=comment>//////////////////////////////////////////////////////////////////
+</span><span class=comment>// some message handler
+</span>
+<span class=keyword>void</span> say_hello(<span class=keyword>void</span>) {            <span class=comment>// msgff_vv
+</span>    cout &lt;&lt; &quot;hello, world\n&quot;;
+}
+
+<span class=keyword>int</span> echo_integer(<span class=keyword>int</span> i) {        <span class=comment>// msgff_ii
+</span>    cout &lt;&lt; i &lt;&lt; '\n';
+    <span class=keyword>return</span> i;
+}
+
+<span class=keyword>int</span> add_2_integer(<span class=keyword>int</span> lhs, <span class=keyword>int</span> rhs) {            <span class=comment>// msgff_iii
+</span>    cout &lt;&lt; lhs+rhs &lt;&lt; '\n';
+    <span class=keyword>return</span> lhs+rhs;
+}
+
+<span class=keyword>void</span> echo_combination(<span class=keyword>const</span> string s, <span class=keyword>int</span> i) {    <span class=comment>// msgff_vcsi
+</span>    cout &lt;&lt; s &lt;&lt; ' ' &lt;&lt; i &lt;&lt; '\n';
+}
+
+<span class=keyword>void</span> def_msg_handler() {
+    cout &lt;&lt; &quot;I am a default message handler\n&quot;;
+}
+
+<span class=comment>// ...
+</span>
+<span class=comment>//////////////////////////////////////////////////////////////////
+</span><span class=comment>// main
+</span>
+<span class=keyword>int</span> main()
+{
+    <span class=comment>// 构造消息链(即注册消息)
+</span>    msg_entry msg_type0(&quot;i am a msgff_vv message\n&quot;, msgff_vv, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>void</span> (*)(<span class=keyword>void</span>)&gt;(say_hello)));
+    msg_entry msg_type1(&quot;i am a msgff_ii message\n&quot;, msgff_ii, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>int</span> (*)(<span class=keyword>int</span>)&gt;(echo_integer)));
+    msg_entry msg_type2(&quot;i am a msgff_iii message\n&quot;, msgff_iii, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>int</span> (*)(<span class=keyword>int</span>, <span class=keyword>int</span>)&gt;(add_2_integer)));
+    msg_entry msg_type3(&quot;i am a msgff_vcsi message\n&quot;, msgff_vcsi, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>void</span> (*)(<span class=keyword>const</span> string, <span class=keyword>int</span>)&gt;(echo_combination)));
+
+    vector&lt;msg_entry&gt; msg_list;
+    msg_list.push_back(msg_type0);
+    msg_list.push_back(msg_type1);
+    msg_list.push_back(msg_type2);
+    msg_list.push_back(msg_type3);
+
+    <span class=comment>// ...
+</span>    <span class=comment>// 从消息队列抓取一个消息 a_msg (此时并不知道a_msg的handler)
+</span>    msg_entry a_msg;                    <span class=comment>//                            /  msg (message id)
+</span>    a_msg.msg_flag = msgff_vcsi;        <span class=comment>// [GUI] -&gt; [Operator System] -  param1
+</span>    <span class=keyword>int</span> param1 = 11, param2 = 13;       <span class=comment>//                            \  param2
+</span>                                        <span class=comment>//                            \  ...                                
+</span>
+    <span class=comment>// 在消息链中寻找此消息，从而调用消息的handler(处理函数)
+</span>    <span class=keyword>for</span> (<span class=keyword>int</span> cnt = 0; cnt &lt; msg_list.size(); ++cnt) {
+        <span class=keyword>if</span> (a_msg.msg_flag == msg_list[cnt].msg_flag) {
+            msg_funs mmf;
+            mmf.pfn = msg_list[cnt].pfn;
+            <span class=keyword>switch</span> (msg_list[cnt].msg_flag)
+            {
+            <span class=keyword>case</span> msgff_vv:
+                (*mmf.pfn_vv)();
+                <span class=keyword>break</span>;
+            <span class=keyword>case</span> msgff_ii:
+                (*mmf.pfn_ii)(param1);
+                <span class=keyword>break</span>;
+            <span class=keyword>case</span> msgff_iii:
+                (*mmf.pfn_iii)(param1, param2);
+                <span class=keyword>break</span>;
+            <span class=keyword>case</span> msgff_vcsi:
+                (*mmf.pfn_vcsi)(&quot;my value is: &quot;, param2);
+                <span class=keyword>break</span>;
+            <span class=keyword>default</span>:
+                def_msg_handler();
+                <span class=keyword>break</span>;
+            }
+        }
+    }
+    <span class=comment>// not find?
+</span>    <span class=comment>// ...
+</span>
+}
+</pre>
+</div>
+</body>
+</html>
