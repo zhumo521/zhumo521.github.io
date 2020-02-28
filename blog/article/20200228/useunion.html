@@ -1,6 +1,8 @@
 <html>
 <head>
-<title>C/C++ÖĞunionµÄÒ»ÖÖ±à³ÌÊÖ·¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
+<title>C/C++ä¸­unionçš„ä¸€ç§ç¼–ç¨‹æ‰‹æ³•</title>
 <style>
 .keyword{color:rgb(0,0,255);}
 .comment{color:rgb(0,128,0);}
@@ -25,20 +27,20 @@ a{text-decoration: none; color: blue;}
 .important{color:red;}
 </style>
 <body>
-<h3 id="etitle">C/C++ÖĞunionµÄÒ»ÖÖ±à³ÌÊÖ·¨</h3>
-<p>£¨×¢£º±¾Ò³ÃæÖĞ´úÂëÒ³ÓÉ<a href="http://www.ucancode.net/Visual_C_MFC_Samples/Convert-C-CPP-Code-file-to-HTML-Free.htm" target="_blank"><i>cpphtml</i></a>³ÌĞòÉú³É£©</p>
-<P>ÏÂÃæµÄ³ÌĞò£¬Ê¹ÓÃ½á¹¹»¯µÄ·½Ê½Ä£ÄâÁË<a href="https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=vs-2019" target="_blank"><i>MFC(Microsoft Foundation Classes)</i></a>ÖĞÏûÏ¢Ó³ÉäµÄ²¿·Ö»úÖÆ£¬Í¨¹ıÕâ¸öÊµÏÖÖĞµÄÒ»Ğ©±à³ÌÊÖ·¨£¬À´Õ¹ÏÖÁËC/C++ÖĞµÄunion(ÁªºÏ)µÄÌØÊâÓÃ·¨¡£</P>
-<p>Àí½âÕâÖÖÓÃ·¨µÄ¹Ø¼üÊÇ<i class="important">MessageMapFunctionsÊÇ¹²ÓÃÌå(union)£¬ËùÒÔµ±Ö´ĞĞmmf.pfn = msg_entry.pfn;ºó£¬¸Ã½á¹¹ÖĞµÄËùÓĞ³ÉÔ±ÆäÊµÖµ¶¼ÊÇÏàÍ¬µÄ£¬¶¼Îªmsg_entry.pfn</i></p>
+<h3 id="etitle">C/C++ä¸­unionçš„ä¸€ç§ç¼–ç¨‹æ‰‹æ³•</h3>
+<p>ï¼ˆæ³¨ï¼šæœ¬é¡µé¢ä¸­ä»£ç é¡µç”±<a href="http://www.ucancode.net/Visual_C_MFC_Samples/Convert-C-CPP-Code-file-to-HTML-Free.htm" target="_blank"><i>cpphtml</i></a>ç¨‹åºç”Ÿæˆï¼‰</p>
+<P>ä¸‹é¢çš„ç¨‹åºï¼Œä½¿ç”¨ç»“æ„åŒ–çš„æ–¹å¼æ¨¡æ‹Ÿäº†<a href="https://docs.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications?view=vs-2019" target="_blank"><i>MFC(Microsoft Foundation Classes)</i></a>ä¸­æ¶ˆæ¯æ˜ å°„çš„éƒ¨åˆ†æœºåˆ¶ï¼Œé€šè¿‡è¿™ä¸ªå®ç°ä¸­çš„ä¸€äº›ç¼–ç¨‹æ‰‹æ³•ï¼Œæ¥å±•ç°äº†C/C++ä¸­çš„union(è”åˆ)çš„ç‰¹æ®Šç”¨æ³•ã€‚</P>
+<p>ç†è§£è¿™ç§ç”¨æ³•çš„å…³é”®æ˜¯<i class="important">MessageMapFunctionsæ˜¯å…±ç”¨ä½“(union)ï¼Œæ‰€ä»¥å½“æ‰§è¡Œmmf.pfn = msg_entry.pfn;åï¼Œè¯¥ç»“æ„ä¸­çš„æ‰€æœ‰æˆå‘˜å…¶å®å€¼éƒ½æ˜¯ç›¸åŒçš„ï¼Œéƒ½ä¸ºmsg_entry.pfn</i></p>
 
 <div id="ills">
 <pre style="font-family:courier;font-size:10pt"><span class=comment>/*
-    ³ÌĞòÂß¼­¼òÍ¼£º
+    ç¨‹åºé€»è¾‘ç®€å›¾ï¼š
                                   /  msg (message id)
        [GUI] -&gt; [Operator System] -  param1
                                   \  param2
                                   \  ...    
-                                        ||(´«µİµ½mfc framework)
-                                        ¡ı¡ı
+                                        ||(ä¼ é€’åˆ°mfc framework)
+                                        â†“â†“
                                    +-----------------+
                                    |    +----------+ |
                                    |    |msg_entry0| |
@@ -77,9 +79,9 @@ a{text-decoration: none; color: blue;}
 <span class=keyword>typedef</span> <span class=keyword>void</span> (*PMSG) (<span class=keyword>void</span>);
 <span class=keyword>typedef</span> <span class=keyword>union</span> MessageMapFunctions msg_funs;
 <span class=keyword>union</span> MessageMapFunctions {
-    PMSG pfn;        <span class=comment>// Í¨ÓÃmessage´¦Àíº¯ÊıÖ¸Õë
+    PMSG pfn;        <span class=comment>// é€šç”¨messageå¤„ç†å‡½æ•°æŒ‡é’ˆ
 </span>
-    <span class=comment>// ¾ßÌåmessage´¦Àíº¯ÊıÖ¸Õë
+    <span class=comment>// å…·ä½“messageå¤„ç†å‡½æ•°æŒ‡é’ˆ
 </span>    <span class=keyword>void</span> (*pfn_vv) (<span class=keyword>void</span>);
     <span class=keyword>int</span> (*pfn_ii) (<span class=keyword>int</span>);
     <span class=keyword>int</span> (*pfn_iii) (<span class=keyword>int</span>, <span class=keyword>int</span>);
@@ -133,7 +135,7 @@ a{text-decoration: none; color: blue;}
 </span>
 <span class=keyword>int</span> main()
 {
-    <span class=comment>// ¹¹ÔìÏûÏ¢Á´(¼´×¢²áÏûÏ¢)
+    <span class=comment>// æ„é€ æ¶ˆæ¯é“¾(å³æ³¨å†Œæ¶ˆæ¯)
 </span>    msg_entry msg_type0(&quot;i am a msgff_vv message\n&quot;, msgff_vv, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>void</span> (*)(<span class=keyword>void</span>)&gt;(say_hello)));
     msg_entry msg_type1(&quot;i am a msgff_ii message\n&quot;, msgff_ii, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>int</span> (*)(<span class=keyword>int</span>)&gt;(echo_integer)));
     msg_entry msg_type2(&quot;i am a msgff_iii message\n&quot;, msgff_iii, (PMSG)(<span class=keyword>static_cast</span>&lt;<span class=keyword>int</span> (*)(<span class=keyword>int</span>, <span class=keyword>int</span>)&gt;(add_2_integer)));
@@ -146,13 +148,13 @@ a{text-decoration: none; color: blue;}
     msg_list.push_back(msg_type3);
 
     <span class=comment>// ...
-</span>    <span class=comment>// ´ÓÏûÏ¢¶ÓÁĞ×¥È¡Ò»¸öÏûÏ¢ a_msg (´ËÊ±²¢²»ÖªµÀa_msgµÄhandler)
+</span>    <span class=comment>// ä»æ¶ˆæ¯é˜Ÿåˆ—æŠ“å–ä¸€ä¸ªæ¶ˆæ¯ a_msg (æ­¤æ—¶å¹¶ä¸çŸ¥é“a_msgçš„handler)
 </span>    msg_entry a_msg;                    <span class=comment>//                            /  msg (message id)
 </span>    a_msg.msg_flag = msgff_vcsi;        <span class=comment>// [GUI] -&gt; [Operator System] -  param1
 </span>    <span class=keyword>int</span> param1 = 11, param2 = 13;       <span class=comment>//                            \  param2
 </span>                                        <span class=comment>//                            \  ...                                
 </span>
-    <span class=comment>// ÔÚÏûÏ¢Á´ÖĞÑ°ÕÒ´ËÏûÏ¢£¬´Ó¶øµ÷ÓÃÏûÏ¢µÄhandler(´¦Àíº¯Êı)
+    <span class=comment>// åœ¨æ¶ˆæ¯é“¾ä¸­å¯»æ‰¾æ­¤æ¶ˆæ¯ï¼Œä»è€Œè°ƒç”¨æ¶ˆæ¯çš„handler(å¤„ç†å‡½æ•°)
 </span>    <span class=keyword>for</span> (<span class=keyword>int</span> cnt = 0; cnt &lt; msg_list.size(); ++cnt) {
         <span class=keyword>if</span> (a_msg.msg_flag == msg_list[cnt].msg_flag) {
             msg_funs mmf;
