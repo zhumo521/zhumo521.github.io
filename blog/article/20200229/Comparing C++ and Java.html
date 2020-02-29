@@ -1,0 +1,442 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:Times,serif;font-size:36.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Times,serif;font-size:36.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Times,serif;font-size:46.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Times,serif;font-size:46.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Times,serif;font-size:13.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Times,serif;font-size:13.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_007{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_008{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:6.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_010{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_010{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_011{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_012{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_012{font-family:Times,serif;font-size:8.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_014{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: line-through}
+div.cls_014{font-family:Times,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_013{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_013{font-family:Times,serif;font-size:7.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:129.36px;top:94.08px" class="cls_002"><span class="cls_002">•</span></div>
+<div style="position:absolute;left:221.04px;top:94.08px" class="cls_002"><span class="cls_002">•</span></div>
+<div style="position:absolute;left:67.68px;top:257.60px" class="cls_003"><span class="cls_003">B: Comparing C++</span></div>
+<div style="position:absolute;left:119.76px;top:316.40px" class="cls_003"><span class="cls_003">and Java</span></div>
+<div style="position:absolute;left:104.88px;top:391.40px" class="cls_004"><span class="cls_004">As a C++ programmer, you already have the basic idea of object-</span></div>
+<div style="position:absolute;left:105.36px;top:408.44px" class="cls_004"><span class="cls_004">oriented programming, and the syntax of Java no doubt looks familiar to</span></div>
+<div style="position:absolute;left:104.64px;top:425.48px" class="cls_004"><span class="cls_004">you. This makes sense since Java was derived from C+ +.</span></div>
+<div style="position:absolute;left:105.36px;top:450.12px" class="cls_005"><span class="cls_005">However, there are a surprising number of differences between C++ and Java. These</span></div>
+<div style="position:absolute;left:105.36px;top:461.88px" class="cls_005"><span class="cls_005">differences are intended to be significant improvements, and if you understand the</span></div>
+<div style="position:absolute;left:105.36px;top:473.40px" class="cls_005"><span class="cls_005">differences you'll see why Java is such a beneficial programming language. This appendix</span></div>
+<div style="position:absolute;left:105.12px;top:485.16px" class="cls_005"><span class="cls_005">takes you through the important features that distinguish Java from C+ +.</span></div>
+<div style="position:absolute;left:106.08px;top:505.56px" class="cls_005"><span class="cls_005">1. The biggest potential stumbling block is speed: interpreted Java runs in the range of 20</span></div>
+<div style="position:absolute;left:122.64px;top:517.32px" class="cls_005"><span class="cls_005">times slower than C. Nothing prevents the Java language from being compiled and there</span></div>
+<div style="position:absolute;left:122.64px;top:528.84px" class="cls_005"><span class="cls_005">are just-in-time compilers appearing at this writing that offer significant speed-ups. It is</span></div>
+<div style="position:absolute;left:122.64px;top:540.60px" class="cls_005"><span class="cls_005">not inconceivable that full native compilers will appear for the more popular platforms,</span></div>
+<div style="position:absolute;left:122.40px;top:552.36px" class="cls_005"><span class="cls_005">but without those there are classes of problems that will be insoluble with Java because</span></div>
+<div style="position:absolute;left:122.64px;top:563.88px" class="cls_005"><span class="cls_005">of the speed issue.</span></div>
+<div style="position:absolute;left:105.36px;top:584.28px" class="cls_005"><span class="cls_005">2.</span></div>
+<div style="position:absolute;left:122.88px;top:584.28px" class="cls_005"><span class="cls_005">Java has both kinds of comments like C+ + does.</span></div>
+<div style="position:absolute;left:105.60px;top:604.68px" class="cls_005"><span class="cls_005">3. Everything must be in a class. There are no global functions or global data. If you want</span></div>
+<div style="position:absolute;left:122.64px;top:616.44px" class="cls_005"><span class="cls_005">the equivalent of globals, make static methods and static data within a class. There are</span></div>
+<div style="position:absolute;left:122.64px;top:628.20px" class="cls_005"><span class="cls_005">no structs or enumerations or unions, only classes.</span></div>
+<div style="position:absolute;left:105.84px;top:648.12px" class="cls_006"><span class="cls_006">4 . </span><span class="cls_005"> All method definitions are defined in the body of the class. Thus, in C++ it would look</span></div>
+<div style="position:absolute;left:122.64px;top:660.12px" class="cls_005"><span class="cls_005">like all the functions are inlined, but they're not (inlines are noted later).</span></div>
+<div style="position:absolute;left:412.32px;top:715.36px" class="cls_007"><span class="cls_007">817</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:852px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:105.60px;top:69.96px" class="cls_005"><span class="cls_005">5.</span></div>
+<div style="position:absolute;left:122.64px;top:69.96px" class="cls_005"><span class="cls_005">Class definitions are roughly the same form in Java as in C+ +, but there's no closing</span></div>
+<div style="position:absolute;left:122.88px;top:81.72px" class="cls_005"><span class="cls_005">semicolon. There are no class declarations of the form </span><span class="cls_008">class foo, </span><span class="cls_005">only class definitions.</span></div>
+<div style="position:absolute;left:123.12px;top:94.00px" class="cls_006"><span class="cls_006">class  aType</span></div>
+<div style="position:absolute;left:194.40px;top:94.00px" class="cls_006"><span class="cls_006">(</span></div>
+<div style="position:absolute;left:134.40px;top:105.52px" class="cls_006"><span class="cls_006">void  aMethod (</span></div>
+<div style="position:absolute;left:217.20px;top:105.52px" class="cls_006"><span class="cls_006">)</span></div>
+<div style="position:absolute;left:240.24px;top:105.76px" class="cls_006"><span class="cls_006">/*  method body</span></div>
+<div style="position:absolute;left:327.84px;top:106.48px" class="cls_006"><span class="cls_006">*/</span></div>
+<div style="position:absolute;left:105.60px;top:137.16px" class="cls_005"><span class="cls_005">6.</span></div>
+<div style="position:absolute;left:122.40px;top:137.16px" class="cls_005"><span class="cls_005">There's no scope resolution operator :: in Java. Java uses the dot for everything, but can</span></div>
+<div style="position:absolute;left:122.64px;top:148.68px" class="cls_005"><span class="cls_005">get away with it since you can define elements only within a class. Even the method</span></div>
+<div style="position:absolute;left:122.64px;top:160.44px" class="cls_005"><span class="cls_005">definitions must always occur within a class, so there is no need for scope resolution</span></div>
+<div style="position:absolute;left:122.64px;top:172.20px" class="cls_005"><span class="cls_005">there either. One place where you'll notice the difference is in the calling of </span><span class="cls_008">static</span></div>
+<div style="position:absolute;left:122.64px;top:183.72px" class="cls_005"><span class="cls_005">methods: you say </span><span class="cls_008">ClassName.methodName( );. </span><span class="cls_005">In addition, </span><span class="cls_008">package </span><span class="cls_005">names are</span></div>
+<div style="position:absolute;left:122.88px;top:195.48px" class="cls_005"><span class="cls_005">established using the dot, and to perform a kind of C+ + </span><span class="cls_008">#include </span><span class="cls_005">you use the </span><span class="cls_008">import</span></div>
+<div style="position:absolute;left:122.64px;top:207.24px" class="cls_005"><span class="cls_005">keyword. For example: </span><span class="cls_008">import java.awt.*;. (#include </span><span class="cls_005">does not directly map to </span><span class="cls_008">import,</span></div>
+<div style="position:absolute;left:122.40px;top:219.00px" class="cls_005"><span class="cls_005">but it has a similar feel to it).</span></div>
+<div style="position:absolute;left:106.08px;top:239.40px" class="cls_005"><span class="cls_005">7.</span></div>
+<div style="position:absolute;left:122.88px;top:239.40px" class="cls_005"><span class="cls_005">Java, like C+ +, has primitive types for efficient access. In Java, these are </span><span class="cls_008">boolean, char,</span></div>
+<div style="position:absolute;left:122.40px;top:251.16px" class="cls_008"><span class="cls_008">byte, short, int, long, float, </span><span class="cls_005">and </span><span class="cls_008">double. All </span><span class="cls_005">the primitive types have specified sizes that</span></div>
+<div style="position:absolute;left:122.64px;top:262.68px" class="cls_005"><span class="cls_005">are machine independent for portability. (This must have some impact on performance,</span></div>
+<div style="position:absolute;left:122.40px;top:274.44px" class="cls_005"><span class="cls_005">varying with the machine.) Type-checking and type requirements are much tighter in</span></div>
+<div style="position:absolute;left:122.88px;top:285.96px" class="cls_005"><span class="cls_005">Java. For example:</span></div>
+<div style="position:absolute;left:123.60px;top:297.72px" class="cls_005"><span class="cls_005">1. Conditional expressions can be only </span><span class="cls_008">boolean, </span><span class="cls_005">not integral.</span></div>
+<div style="position:absolute;left:122.64px;top:309.48px" class="cls_005"><span class="cls_005">2. The result of an expression like X + Y must be used; you can't just say "X + Y" for the</span></div>
+<div style="position:absolute;left:122.88px;top:321.24px" class="cls_005"><span class="cls_005">side effect.</span></div>
+<div style="position:absolute;left:105.60px;top:341.64px" class="cls_005"><span class="cls_005">8.</span></div>
+<div style="position:absolute;left:122.40px;top:341.64px" class="cls_005"><span class="cls_005">The </span><span class="cls_008">char </span><span class="cls_005">type uses the international 16-bit Unicode character set, so it can</span></div>
+<div style="position:absolute;left:122.64px;top:353.16px" class="cls_005"><span class="cls_005">automatically represent most national characters.</span></div>
+<div style="position:absolute;left:105.60px;top:373.80px" class="cls_005"><span class="cls_005">9.</span></div>
+<div style="position:absolute;left:122.88px;top:373.80px" class="cls_005"><span class="cls_005">Static quoted strings are automatically converted into </span><span class="cls_008">String </span><span class="cls_005">objects. There is no</span></div>
+<div style="position:absolute;left:122.64px;top:385.32px" class="cls_005"><span class="cls_005">independent static character array string like there is in C and C+ +.</span></div>
+<div style="position:absolute;left:106.08px;top:405.72px" class="cls_005"><span class="cls_005">10.</span></div>
+<div style="position:absolute;left:122.88px;top:405.72px" class="cls_005"><span class="cls_005">Java adds the triple right shift > > > to act as a "logical" right shift by inserting zeroes at</span></div>
+<div style="position:absolute;left:122.64px;top:417.48px" class="cls_005"><span class="cls_005">the top end; the > > inserts the sign bit as it shifts (an "arithmetic" shift).</span></div>
+<div style="position:absolute;left:106.08px;top:437.88px" class="cls_005"><span class="cls_005">11 Although they look similar, arrays have a very different structure and behavior in Java</span></div>
+<div style="position:absolute;left:122.64px;top:449.64px" class="cls_005"><span class="cls_005">than they do in C+ +. There's a read-only </span><span class="cls_008">length </span><span class="cls_005">member that tells you how big the</span></div>
+<div style="position:absolute;left:122.64px;top:461.16px" class="cls_005"><span class="cls_005">array is, and run-time checking throws an exception if you go out of bounds. All arrays</span></div>
+<div style="position:absolute;left:122.64px;top:472.92px" class="cls_005"><span class="cls_005">are created on the heap, and you can assign one array to another (the array handle is</span></div>
+<div style="position:absolute;left:122.88px;top:484.44px" class="cls_005"><span class="cls_005">simply copied). The array identifier is a first-class object, with all of the methods</span></div>
+<div style="position:absolute;left:122.64px;top:496.20px" class="cls_005"><span class="cls_005">commonly available to all other objects.</span></div>
+<div style="position:absolute;left:106.08px;top:516.60px" class="cls_005"><span class="cls_005">12. All objects of non-primitive types can be created only via </span><span class="cls_008">new. </span><span class="cls_005">There's no equivalent to</span></div>
+<div style="position:absolute;left:122.64px;top:528.36px" class="cls_005"><span class="cls_005">creating non-primitive objects "on the stack" as in C+ +. All primitive types can be</span></div>
+<div style="position:absolute;left:122.64px;top:539.88px" class="cls_005"><span class="cls_005">created only on the stack, without </span><span class="cls_008">new. </span><span class="cls_005">There are wrapper classes for all primitive</span></div>
+<div style="position:absolute;left:122.64px;top:551.64px" class="cls_005"><span class="cls_005">classes so that you can create equivalent heap-based objects via </span><span class="cls_008">new. </span><span class="cls_005">(Arrays of</span></div>
+<div style="position:absolute;left:122.40px;top:563.40px" class="cls_005"><span class="cls_005">primitives are a special case: they can be allocated via aggregate initialization as in C+ +,</span></div>
+<div style="position:absolute;left:122.64px;top:574.92px" class="cls_005"><span class="cls_005">or by using </span><span class="cls_008">new.)</span></div>
+<div style="position:absolute;left:105.84px;top:595.56px" class="cls_005"><span class="cls_005">13. No forward declarations are necessary in Java. If you want to use a class or a method</span></div>
+<div style="position:absolute;left:122.40px;top:607.08px" class="cls_005"><span class="cls_005">before it is defined, you simply use it - the compiler ensures that the appropriate</span></div>
+<div style="position:absolute;left:122.64px;top:618.84px" class="cls_005"><span class="cls_005">definition exists. Thus you don't have any of the forward referencing issues that you do</span></div>
+<div style="position:absolute;left:122.64px;top:630.36px" class="cls_005"><span class="cls_005">in C++.</span></div>
+<div style="position:absolute;left:106.08px;top:651.00px" class="cls_005"><span class="cls_005">14. Java has no preprocessor. If you want to use classes in another library, you say </span><span class="cls_008">import</span></div>
+<div style="position:absolute;left:122.64px;top:662.52px" class="cls_005"><span class="cls_005">and the name of the library. There are no preprocessor-like macros.</span></div>
+<div style="position:absolute;left:70.32px;top:715.36px" class="cls_007"><span class="cls_007">818</span></div>
+<div style="position:absolute;left:161.28px;top:715.36px" class="cls_007"><span class="cls_007">Thinking in </span><span class="cls_009">Java</span></div>
+<div style="position:absolute;left:339.12px;top:715.36px" class="cls_007"><span class="cls_007"> </span><A HREF="http://www.bruceeckel.com/">www.BruceEckel.com</A> </div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:1704px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:106.08px;top:69.96px" class="cls_005"><span class="cls_005">15.</span></div>
+<div style="position:absolute;left:122.88px;top:69.96px" class="cls_005"><span class="cls_005">Java uses packages in place of namespaces. The name issue is taken care of by putting</span></div>
+<div style="position:absolute;left:122.88px;top:81.72px" class="cls_005"><span class="cls_005">everything into a class and by using a facility called "packages" that performs the</span></div>
+<div style="position:absolute;left:122.88px;top:93.24px" class="cls_005"><span class="cls_005">equivalent namespace breakup for class names. Packages also collect library components</span></div>
+<div style="position:absolute;left:122.64px;top:105.00px" class="cls_005"><span class="cls_005">under a single library name. You simply </span><span class="cls_008">import </span><span class="cls_005">a package and the compiler takes care of</span></div>
+<div style="position:absolute;left:122.64px;top:116.52px" class="cls_005"><span class="cls_005">the rest.</span></div>
+<div style="position:absolute;left:106.08px;top:137.16px" class="cls_005"><span class="cls_005">16.</span></div>
+<div style="position:absolute;left:122.64px;top:137.16px" class="cls_005"><span class="cls_005">Object handles defined as class members are automatically initialized to </span><span class="cls_008">null.</span></div>
+<div style="position:absolute;left:122.64px;top:148.68px" class="cls_005"><span class="cls_005">Initialization of primitive class data members is guaranteed in Java; if you don't</span></div>
+<div style="position:absolute;left:122.88px;top:160.44px" class="cls_005"><span class="cls_005">explicitly initialize them they get a default value (a zero or equivalent). You can initialize</span></div>
+<div style="position:absolute;left:122.64px;top:172.20px" class="cls_005"><span class="cls_005">them explicitly, either when you define them in the class or in the constructor. The</span></div>
+<div style="position:absolute;left:122.88px;top:183.72px" class="cls_005"><span class="cls_005">syntax makes more sense than that for C+ +, and is consistent for </span><span class="cls_008">static </span><span class="cls_005">and </span><span class="cls_008">non-static</span></div>
+<div style="position:absolute;left:122.64px;top:195.48px" class="cls_005"><span class="cls_005">members alike. You don't need to externally define storage for </span><span class="cls_008">static </span><span class="cls_005">members like you</span></div>
+<div style="position:absolute;left:122.64px;top:207.00px" class="cls_005"><span class="cls_005">do in C++.</span></div>
+<div style="position:absolute;left:106.08px;top:227.64px" class="cls_005"><span class="cls_005">17.</span></div>
+<div style="position:absolute;left:122.64px;top:227.64px" class="cls_005"><span class="cls_005">There are no Java pointers in the sense of C and C+ +. When you create an object with</span></div>
+<div style="position:absolute;left:122.64px;top:239.40px" class="cls_008"><span class="cls_008">new, </span><span class="cls_005">you get back a reference (which I've been calling a </span><span class="cls_007">handle </span><span class="cls_005">in this book). For</span></div>
+<div style="position:absolute;left:122.88px;top:251.16px" class="cls_005"><span class="cls_005">example:</span></div>
+<div style="position:absolute;left:123.36px;top:263.68px" class="cls_006"><span class="cls_006">String  s</span></div>
+<div style="position:absolute;left:175.44px;top:263.44px" class="cls_006"><span class="cls_006">=  new  String("howdy");</span></div>
+<div style="position:absolute;left:122.64px;top:274.68px" class="cls_005"><span class="cls_005">However, unlike C++ references that must be initialized when created and cannot be</span></div>
+<div style="position:absolute;left:122.64px;top:286.44px" class="cls_005"><span class="cls_005">rebound to a different location, Java references don't have to be bound at the point of</span></div>
+<div style="position:absolute;left:122.64px;top:297.96px" class="cls_005"><span class="cls_005">creation. They can also be rebound at will, which eliminates part of the need for</span></div>
+<div style="position:absolute;left:122.40px;top:309.48px" class="cls_005"><span class="cls_005">pointers. The other reason for pointers in C and C+ + is to be able to point at any place</span></div>
+<div style="position:absolute;left:122.64px;top:321.24px" class="cls_005"><span class="cls_005">in memory whatsoever (which makes them unsafe, which is why Java doesn't support</span></div>
+<div style="position:absolute;left:122.64px;top:333.00px" class="cls_005"><span class="cls_005">them). Pointers are often seen as an efficient way to move through an array of primitive</span></div>
+<div style="position:absolute;left:122.16px;top:344.52px" class="cls_005"><span class="cls_005">variables; Java arrays allow you to do that in a safer fashion. The ultimate solution for</span></div>
+<div style="position:absolute;left:122.40px;top:356.28px" class="cls_005"><span class="cls_005">pointer problems is native methods (discussed in Appendix A). Passing pointers to</span></div>
+<div style="position:absolute;left:122.64px;top:368.04px" class="cls_005"><span class="cls_005">methods isn't a problem since there are no global functions, only classes, and you can</span></div>
+<div style="position:absolute;left:122.64px;top:379.80px" class="cls_005"><span class="cls_005">pass references to objects.</span></div>
+<div style="position:absolute;left:122.40px;top:391.32px" class="cls_005"><span class="cls_005">The Java language promoters initially said "No pointers!", but when many programmers</span></div>
+<div style="position:absolute;left:122.88px;top:402.84px" class="cls_005"><span class="cls_005">questioned how you can work without pointers, the promoters began saying "Restricted</span></div>
+<div style="position:absolute;left:122.40px;top:414.60px" class="cls_005"><span class="cls_005">pointers." You can make up your mind whether it's "really" a pointer or not. In any</span></div>
+<div style="position:absolute;left:122.88px;top:426.36px" class="cls_005"><span class="cls_005">event, there's no pointer </span><span class="cls_007">arithmetic.</span></div>
+<div style="position:absolute;left:106.08px;top:447.00px" class="cls_005"><span class="cls_005">18.</span></div>
+<div style="position:absolute;left:122.88px;top:447.00px" class="cls_005"><span class="cls_005">Java has constructors that are similar to constructors in C+ +. You get a default</span></div>
+<div style="position:absolute;left:122.64px;top:458.76px" class="cls_005"><span class="cls_005">constructor if you don't define one, and if you define a non-default constructor, there's</span></div>
+<div style="position:absolute;left:122.64px;top:470.28px" class="cls_005"><span class="cls_005">no automatic default constructor defined for you, just like in C+ +. There are no copy</span></div>
+<div style="position:absolute;left:122.64px;top:482.04px" class="cls_005"><span class="cls_005">constructors, since all arguments are passed by reference.</span></div>
+<div style="position:absolute;left:106.08px;top:502.44px" class="cls_005"><span class="cls_005">19.</span></div>
+<div style="position:absolute;left:122.40px;top:502.44px" class="cls_005"><span class="cls_005">There are no destructors in Java. There is no "scope" of a variable per se, to indicate</span></div>
+<div style="position:absolute;left:122.40px;top:513.96px" class="cls_005"><span class="cls_005">when the object's lifetime is ended - the lifetime of an object is determined instead by the</span></div>
+<div style="position:absolute;left:122.64px;top:525.72px" class="cls_005"><span class="cls_005">garbage collector. There is a </span><span class="cls_008">finalize( ) </span><span class="cls_005">method that's a member of each class, something</span></div>
+<div style="position:absolute;left:122.64px;top:537.48px" class="cls_005"><span class="cls_005">like a C+ + destructor, but </span><span class="cls_008">finalize( ) </span><span class="cls_005">is called by the garbage collector and is supposed to</span></div>
+<div style="position:absolute;left:122.40px;top:549.00px" class="cls_005"><span class="cls_005">be responsible only for releasing "resources" (such as open files, sockets, ports, IIRLs, etc).</span></div>
+<div style="position:absolute;left:122.64px;top:560.76px" class="cls_005"><span class="cls_005">If you need something done at a specific point, you must create a special method and call</span></div>
+<div style="position:absolute;left:122.64px;top:572.28px" class="cls_005"><span class="cls_005">it, not rely upon </span><span class="cls_008">finalize( ). </span><span class="cls_005">Put another way, all objects in C++ will be (or rather,</span></div>
+<div style="position:absolute;left:122.88px;top:584.04px" class="cls_005"><span class="cls_005">should be) destroyed, but not all objects in Java are garbage collected. Because Java</span></div>
+<div style="position:absolute;left:122.64px;top:595.80px" class="cls_005"><span class="cls_005">doesn't support destructors, you must be careful to create a cleanup method if it's</span></div>
+<div style="position:absolute;left:122.64px;top:607.56px" class="cls_005"><span class="cls_005">necessary and to explicitly call all the cleanup methods for the base class and member</span></div>
+<div style="position:absolute;left:122.64px;top:619.08px" class="cls_005"><span class="cls_005">objects in your class.</span></div>
+<div style="position:absolute;left:105.12px;top:639.48px" class="cls_005"><span class="cls_005">20.</span></div>
+<div style="position:absolute;left:122.88px;top:639.48px" class="cls_005"><span class="cls_005">Java has method overloading that works virtually identically to C+ + function</span></div>
+<div style="position:absolute;left:122.64px;top:651.24px" class="cls_005"><span class="cls_005">overloading.</span></div>
+<div style="position:absolute;left:105.12px;top:671.64px" class="cls_005"><span class="cls_005">21.</span></div>
+<div style="position:absolute;left:122.88px;top:671.64px" class="cls_005"><span class="cls_005">Java does not support default arguments.</span></div>
+<div style="position:absolute;left:69.12px;top:715.36px" class="cls_007"><span class="cls_007">Appendix B: Comparing C+ + and Java</span></div>
+<div style="position:absolute;left:412.32px;top:715.36px" class="cls_007"><span class="cls_007">819</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:2556px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:105.36px;top:69.96px" class="cls_005"><span class="cls_005">22.</span></div>
+<div style="position:absolute;left:122.64px;top:69.96px" class="cls_005"><span class="cls_005">There's no </span><span class="cls_008">goto </span><span class="cls_005">in Java. The one unconditional jump mechanism is the </span><span class="cls_008">break </span><span class="cls_010">label or</span></div>
+<div style="position:absolute;left:122.64px;top:81.96px" class="cls_008"><span class="cls_008">continue </span><span class="cls_010">label, </span><span class="cls_005">which is used to jump out of the middle of multiply-nested loops.</span></div>
+<div style="position:absolute;left:105.12px;top:102.84px" class="cls_005"><span class="cls_005">23.</span></div>
+<div style="position:absolute;left:122.64px;top:102.60px" class="cls_005"><span class="cls_005">Java uses a singly-rooted hierarchy, so all objects are ultimately inherited from the root</span></div>
+<div style="position:absolute;left:122.64px;top:114.36px" class="cls_005"><span class="cls_005">class </span><span class="cls_008">Object. In </span><span class="cls_005">C+ +, you can start a new inheritance tree anywhere, so you end up</span></div>
+<div style="position:absolute;left:122.40px;top:125.88px" class="cls_005"><span class="cls_005">with a forest of trees. In Java you get a single ultimate hierarchy. This can seem</span></div>
+<div style="position:absolute;left:122.64px;top:137.64px" class="cls_005"><span class="cls_005">restrictive, but it gives a great deal of power since you know that every object is</span></div>
+<div style="position:absolute;left:122.64px;top:149.40px" class="cls_005"><span class="cls_005">guaranteed to have at least the </span><span class="cls_008">Object </span><span class="cls_005">interface. C+ + appears to be the only 00</span></div>
+<div style="position:absolute;left:122.64px;top:160.92px" class="cls_005"><span class="cls_005">language that does not impose a singly rooted hierarchy.</span></div>
+<div style="position:absolute;left:105.12px;top:181.56px" class="cls_005"><span class="cls_005">24.</span></div>
+<div style="position:absolute;left:122.64px;top:181.32px" class="cls_005"><span class="cls_005">Java has no templates or other implementation of parameterized types. There is a set of</span></div>
+<div style="position:absolute;left:122.64px;top:193.08px" class="cls_005"><span class="cls_005">collections: </span><span class="cls_008">Vector, Stack, </span><span class="cls_005">and </span><span class="cls_008">Hashtable </span><span class="cls_005">that hold </span><span class="cls_008">Object </span><span class="cls_005">references, and through</span></div>
+<div style="position:absolute;left:122.40px;top:204.84px" class="cls_005"><span class="cls_005">which you can satisfy your collection needs, but these collections are not designed for</span></div>
+<div style="position:absolute;left:122.88px;top:216.36px" class="cls_005"><span class="cls_005">efficiency like the C++ Standard Template Library (STL). The new collections in Java 1.2</span></div>
+<div style="position:absolute;left:122.64px;top:228.36px" class="cls_005"><span class="cls_005">are more complete, but still don't have the same kind of efficiency as template</span></div>
+<div style="position:absolute;left:122.64px;top:239.88px" class="cls_005"><span class="cls_005">implementations would allow.</span></div>
+<div style="position:absolute;left:105.12px;top:260.28px" class="cls_005"><span class="cls_005">25.</span></div>
+<div style="position:absolute;left:122.64px;top:260.28px" class="cls_005"><span class="cls_005">Garbage collection means memory leaks are much harder to cause in Java, but not</span></div>
+<div style="position:absolute;left:122.64px;top:272.04px" class="cls_005"><span class="cls_005">impossible. (If you make native method calls that allocate storage, these are typically not</span></div>
+<div style="position:absolute;left:122.64px;top:283.80px" class="cls_005"><span class="cls_005">tracked by the garbage collector.) However, many memory leaks and resouce leaks can be</span></div>
+<div style="position:absolute;left:122.64px;top:295.32px" class="cls_005"><span class="cls_005">tracked to a badly written </span><span class="cls_008">finalize( ) </span><span class="cls_005">or to not releasing a resource at the end of the</span></div>
+<div style="position:absolute;left:122.40px;top:307.08px" class="cls_005"><span class="cls_005">block where it is allocated (a place where a destructor would certainly come in handy).</span></div>
+<div style="position:absolute;left:122.64px;top:318.60px" class="cls_005"><span class="cls_005">The garbage collector is a huge improvement over C+ +, and makes a lot of</span></div>
+<div style="position:absolute;left:122.40px;top:330.36px" class="cls_005"><span class="cls_005">programming problems simply vanish. It might make Java unsuitable for solving a</span></div>
+<div style="position:absolute;left:122.88px;top:342.12px" class="cls_005"><span class="cls_005">small subset of problems that cannot tolerate a garbage collector, but the advantage of a</span></div>
+<div style="position:absolute;left:122.64px;top:353.64px" class="cls_005"><span class="cls_005">garbage collector seems to greatly outweigh this potential drawback.</span></div>
+<div style="position:absolute;left:105.12px;top:374.04px" class="cls_005"><span class="cls_005">26.</span></div>
+<div style="position:absolute;left:122.64px;top:374.04px" class="cls_005"><span class="cls_005">Java has built-in multithreading support. There's a </span><span class="cls_008">Thread </span><span class="cls_005">class that you inherit to</span></div>
+<div style="position:absolute;left:122.64px;top:385.80px" class="cls_005"><span class="cls_005">create a new thread (you override the </span><span class="cls_008">run( ) </span><span class="cls_005">method). Mutual exclusion occurs at the</span></div>
+<div style="position:absolute;left:122.64px;top:397.56px" class="cls_005"><span class="cls_005">level of objects using the </span><span class="cls_008">synchronized </span><span class="cls_005">keyword as a type qualifier for methods. Only</span></div>
+<div style="position:absolute;left:122.64px;top:409.32px" class="cls_005"><span class="cls_005">one thread may use a </span><span class="cls_008">synchronized </span><span class="cls_005">method of a particular object at any one time. Put</span></div>
+<div style="position:absolute;left:122.64px;top:420.84px" class="cls_005"><span class="cls_005">another way, when a </span><span class="cls_008">synchronized </span><span class="cls_005">method is entered, it first "locks" the object against</span></div>
+<div style="position:absolute;left:122.64px;top:432.60px" class="cls_005"><span class="cls_005">any other </span><span class="cls_008">synchronized </span><span class="cls_005">method using that object and "unlocks" the object only upon</span></div>
+<div style="position:absolute;left:122.88px;top:444.36px" class="cls_005"><span class="cls_005">exiting the method. There are no explicit locks; they happen automatically. You're still</span></div>
+<div style="position:absolute;left:122.64px;top:455.88px" class="cls_005"><span class="cls_005">responsible for implementing more sophisticated synchronization between threads by</span></div>
+<div style="position:absolute;left:122.64px;top:467.64px" class="cls_005"><span class="cls_005">creating your own "monitor" class. Recursive </span><span class="cls_008">synchronized </span><span class="cls_005">methods work correctly.</span></div>
+<div style="position:absolute;left:122.64px;top:479.16px" class="cls_005"><span class="cls_005">Time slicing is not guaranteed between equal priority threads.</span></div>
+<div style="position:absolute;left:105.12px;top:499.80px" class="cls_005"><span class="cls_005">27.</span></div>
+<div style="position:absolute;left:122.64px;top:499.80px" class="cls_005"><span class="cls_005">Instead of controlling blocks of declarations like C+ + does, the access specifiers </span><span class="cls_008">(public,</span></div>
+<div style="position:absolute;left:122.40px;top:511.56px" class="cls_008"><span class="cls_008">private, </span><span class="cls_005">and </span><span class="cls_008">protected) </span><span class="cls_005">are placed on each definition for each member of a class.</span></div>
+<div style="position:absolute;left:122.40px;top:523.08px" class="cls_005"><span class="cls_005">Without an explicit access specifier, an element defaults to "friendly," which means that</span></div>
+<div style="position:absolute;left:122.64px;top:534.60px" class="cls_005"><span class="cls_005">it is accessible to other elements in the same package (equivalent to them all being C++</span></div>
+<div style="position:absolute;left:122.64px;top:546.36px" class="cls_008"><span class="cls_008">friends) </span><span class="cls_005">but inaccessible outside the package. The class, and each method within the</span></div>
+<div style="position:absolute;left:122.64px;top:558.12px" class="cls_005"><span class="cls_005">class, has an access specifier to determine whether it's visible outside the file. Sometimes</span></div>
+<div style="position:absolute;left:122.64px;top:569.88px" class="cls_005"><span class="cls_005">the </span><span class="cls_008">private </span><span class="cls_005">keyword is used less in Java because "friendly" access is often more useful</span></div>
+<div style="position:absolute;left:122.64px;top:581.40px" class="cls_005"><span class="cls_005">than excluding access from other classes in the same package. (However, with</span></div>
+<div style="position:absolute;left:122.64px;top:593.16px" class="cls_005"><span class="cls_005">multithreading the proper use of </span><span class="cls_008">private </span><span class="cls_005">is essential.) The Java </span><span class="cls_008">protected </span><span class="cls_005">keyword</span></div>
+<div style="position:absolute;left:122.64px;top:604.92px" class="cls_005"><span class="cls_005">means "accessible to inheritors </span><span class="cls_010">and </span><span class="cls_005">to others in this package." There is no equivalent to</span></div>
+<div style="position:absolute;left:122.64px;top:616.68px" class="cls_005"><span class="cls_005">the C++ </span><span class="cls_008">protected </span><span class="cls_005">keyword that means "accessible to inheritors </span><span class="cls_010">only" </span><span class="cls_008">(private</span></div>
+<div style="position:absolute;left:122.40px;top:628.68px" class="cls_008"><span class="cls_008">protected </span><span class="cls_005">used to do this, but the use of that keyword pair was removed).</span></div>
+<div style="position:absolute;left:105.60px;top:649.08px" class="cls_006"><span class="cls_006">2 8 . </span><span class="cls_005">Nested classes. In C+ +, nesting a class is an aid to name hiding and code organization</span></div>
+<div style="position:absolute;left:123.12px;top:660.84px" class="cls_005"><span class="cls_005">(but C++ namespaces eliminate the need for name hiding). Java packaging provides the</span></div>
+<div style="position:absolute;left:122.88px;top:672.60px" class="cls_005"><span class="cls_005">equivalence of namespaces, so that isn't an issue. Java 1.1 has </span><span class="cls_010">inner classes </span><span class="cls_005">that look just</span></div>
+<div style="position:absolute;left:122.64px;top:684.60px" class="cls_005"><span class="cls_005">like nested classes. However, an object of an inner class secretly keeps a handle to the</span></div>
+<div style="position:absolute;left:70.32px;top:714.36px" class="cls_010"><span class="cls_010">820</span></div>
+<div style="position:absolute;left:161.04px;top:714.36px" class="cls_010"><span class="cls_010">Thinking in Java</span></div>
+<div style="position:absolute;left:339.12px;top:714.36px" class="cls_010"><span class="cls_010"> </span><A HREF="http://www.bruceeckel.com/">www.BruceEckel.com</A> </div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:3408px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:122.64px;top:69.96px" class="cls_005"><span class="cls_005">object of the outer class that was involved in the creation of the inner class object. This</span></div>
+<div style="position:absolute;left:122.64px;top:81.72px" class="cls_005"><span class="cls_005">means that the inner class object may access members of the outer class object without</span></div>
+<div style="position:absolute;left:122.88px;top:93.24px" class="cls_005"><span class="cls_005">qualification, as if those members belonged directly to the inner class object. This</span></div>
+<div style="position:absolute;left:122.64px;top:105.00px" class="cls_005"><span class="cls_005">provides a much more elegant solution to the problem of callbacks, solved with pointers</span></div>
+<div style="position:absolute;left:122.64px;top:116.52px" class="cls_005"><span class="cls_005">to members in C+ +.</span></div>
+<div style="position:absolute;left:105.60px;top:137.16px" class="cls_006"><span class="cls_006">29. </span><span class="cls_005">Because of inner classes described in the previous point, there are no pointers to members</span></div>
+<div style="position:absolute;left:122.64px;top:148.68px" class="cls_005"><span class="cls_005">in Java.</span></div>
+<div style="position:absolute;left:105.36px;top:169.08px" class="cls_005"><span class="cls_005">30. No </span><span class="cls_008">inline </span><span class="cls_005">methods. The Java compiler might decide on its own to inline a method, but</span></div>
+<div style="position:absolute;left:122.64px;top:180.84px" class="cls_005"><span class="cls_005">you don't have much control over this. You can suggest inlining in Java by using the</span></div>
+<div style="position:absolute;left:122.64px;top:192.60px" class="cls_008"><span class="cls_008">final </span><span class="cls_005">keyword for a method. However, </span><span class="cls_008">inline </span><span class="cls_005">functions are only suggestions to the C+ +</span></div>
+<div style="position:absolute;left:122.64px;top:204.12px" class="cls_005"><span class="cls_005">compiler as well.</span></div>
+<div style="position:absolute;left:105.84px;top:224.52px" class="cls_006"><span class="cls_006">31. </span><span class="cls_005">Inheritance in Java has the same effect as in C+ +, but the syntax is different. Java uses</span></div>
+<div style="position:absolute;left:122.64px;top:236.28px" class="cls_005"><span class="cls_005">the </span><span class="cls_008">extends </span><span class="cls_005">keyword to indicate inheritance from a base class and the </span><span class="cls_008">super </span><span class="cls_005">keyword to</span></div>
+<div style="position:absolute;left:122.88px;top:248.04px" class="cls_005"><span class="cls_005">specify methods to be called in the base class that have the same name as the method</span></div>
+<div style="position:absolute;left:122.64px;top:259.80px" class="cls_005"><span class="cls_005">you're in. (However, the </span><span class="cls_008">super </span><span class="cls_005">keyword in Java allows you to access methods only in</span></div>
+<div style="position:absolute;left:122.64px;top:271.32px" class="cls_005"><span class="cls_005">the parent class, one level up in the hierarchy.) Base-class scoping in C++ allows you to</span></div>
+<div style="position:absolute;left:122.64px;top:283.08px" class="cls_005"><span class="cls_005">access methods that are deeper in the hierarchy). The base-class constructor is also called</span></div>
+<div style="position:absolute;left:122.64px;top:294.84px" class="cls_005"><span class="cls_005">using the </span><span class="cls_008">super </span><span class="cls_005">keyword. As mentioned before, all classes are ultimately automatically</span></div>
+<div style="position:absolute;left:122.64px;top:306.36px" class="cls_005"><span class="cls_005">inherited from </span><span class="cls_008">Object. </span><span class="cls_005">There's no explicit constructor initializer list like in C+ +, but the</span></div>
+<div style="position:absolute;left:122.64px;top:318.12px" class="cls_005"><span class="cls_005">compiler forces you to perform all base-class initialization at the beginning of the</span></div>
+<div style="position:absolute;left:122.64px;top:329.64px" class="cls_005"><span class="cls_005">constructor body and it won't let you perform these later in the body. Member</span></div>
+<div style="position:absolute;left:122.64px;top:341.40px" class="cls_005"><span class="cls_005">initialization is guaranteed through a combination of automatic initialization and</span></div>
+<div style="position:absolute;left:122.88px;top:353.16px" class="cls_005"><span class="cls_005">exceptions for uninitialized object handles.</span></div>
+<div style="position:absolute;left:122.64px;top:365.44px" class="cls_006"><span class="cls_006">public  class  Foo  extends  Bar  f</span></div>
+<div style="position:absolute;left:134.40px;top:376.96px" class="cls_006"><span class="cls_006">public  Foo(String msg)   f</span></div>
+<div style="position:absolute;left:146.64px;top:388.72px" class="cls_006"><span class="cls_006">super(msg) ;</span></div>
+<div style="position:absolute;left:216.96px;top:388.72px" class="cls_006"><span class="cls_006">//  Calls  base  constructor</span></div>
+<div style="position:absolute;left:135.84px;top:401.44px" class="cls_006"><span class="cls_006">1</span></div>
+<div style="position:absolute;left:134.40px;top:412.00px" class="cls_006"><span class="cls_006">public  baz(int  i)</span></div>
+<div style="position:absolute;left:241.20px;top:412.72px" class="cls_006"><span class="cls_006">{</span></div>
+<div style="position:absolute;left:252.00px;top:412.00px" class="cls_006"><span class="cls_006">//  Override</span></div>
+<div style="position:absolute;left:146.64px;top:423.76px" class="cls_006"><span class="cls_006">super.baz(i);</span></div>
+<div style="position:absolute;left:228.48px;top:423.76px" class="cls_006"><span class="cls_006">//  Calls  base  method</span></div>
+<div style="position:absolute;left:105.60px;top:466.92px" class="cls_005"><span class="cls_005">32.</span></div>
+<div style="position:absolute;left:122.88px;top:466.92px" class="cls_005"><span class="cls_005">Inheritance in Java doesn't change the protection level of the members in the base class.</span></div>
+<div style="position:absolute;left:122.40px;top:478.44px" class="cls_005"><span class="cls_005">You cannot specify </span><span class="cls_008">public, private, </span><span class="cls_005">or </span><span class="cls_008">protected </span><span class="cls_005">inheritance in Java, as you can in</span></div>
+<div style="position:absolute;left:122.88px;top:490.20px" class="cls_005"><span class="cls_005">C+ +. Also, overridden methods in a derived class cannot reduce the access of the method</span></div>
+<div style="position:absolute;left:122.64px;top:501.96px" class="cls_005"><span class="cls_005">in the base class. For example, if a method is </span><span class="cls_008">public </span><span class="cls_005">in the base class and you override it,</span></div>
+<div style="position:absolute;left:122.64px;top:513.48px" class="cls_005"><span class="cls_005">your overridden method must also be </span><span class="cls_008">public </span><span class="cls_005">(the compiler checks for this).</span></div>
+<div style="position:absolute;left:105.60px;top:534.12px" class="cls_005"><span class="cls_005">33.</span></div>
+<div style="position:absolute;left:122.88px;top:534.12px" class="cls_005"><span class="cls_005">Java provides the </span><span class="cls_008">interface </span><span class="cls_005">keyword, which creates the equivalent of an abstract base</span></div>
+<div style="position:absolute;left:122.64px;top:545.64px" class="cls_005"><span class="cls_005">class filled with abstract methods and with no data members. This makes a clear</span></div>
+<div style="position:absolute;left:122.64px;top:557.40px" class="cls_005"><span class="cls_005">distinction between something designed to be just an interface and an extension of</span></div>
+<div style="position:absolute;left:122.88px;top:569.16px" class="cls_005"><span class="cls_005">existing functionality via the </span><span class="cls_008">extends </span><span class="cls_005">keyword. It's worth noting that the </span><span class="cls_008">abstract</span></div>
+<div style="position:absolute;left:122.64px;top:580.68px" class="cls_005"><span class="cls_005">keyword produces a similar effect in that you can't create an object of that class. An</span></div>
+<div style="position:absolute;left:122.88px;top:592.44px" class="cls_008"><span class="cls_008">abstract </span><span class="cls_005">class may contain abstract methods (although it isn't required to contain any),</span></div>
+<div style="position:absolute;left:122.40px;top:604.44px" class="cls_005"><span class="cls_005">but it is also able to contain implementations, so it is restricted to single inheritance.</span></div>
+<div style="position:absolute;left:122.64px;top:615.96px" class="cls_005"><span class="cls_005">Together with interfaces, this scheme prevents the need for some mechanism like virtual</span></div>
+<div style="position:absolute;left:122.40px;top:627.72px" class="cls_005"><span class="cls_005">base classes in C+ +.</span></div>
+<div style="position:absolute;left:122.40px;top:639.48px" class="cls_005"><span class="cls_005">To create a version of the </span><span class="cls_008">interface </span><span class="cls_005">that can be instantiated, use the </span><span class="cls_008">implements</span></div>
+<div style="position:absolute;left:122.64px;top:651.00px" class="cls_005"><span class="cls_005">keyword, whose syntax looks like inheritance:</span></div>
+<div style="position:absolute;left:122.64px;top:663.28px" class="cls_006"><span class="cls_006">public  interface  Face  f</span></div>
+<div style="position:absolute;left:134.16px;top:675.04px" class="cls_006"><span class="cls_006">public  void  smile();</span></div>
+<div style="position:absolute;left:69.12px;top:715.36px" class="cls_007"><span class="cls_007">Appendix B: Comparing C+ + and Java</span></div>
+<div style="position:absolute;left:412.32px;top:715.36px" class="cls_007"><span class="cls_007">821</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:4260px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:122.64px;top:70.72px" class="cls_006"><span class="cls_006">public  class  Baz  extends  Bar  implements  Face  f</span></div>
+<div style="position:absolute;left:134.16px;top:82.24px" class="cls_006"><span class="cls_006">public  void  smile(</span></div>
+<div style="position:absolute;left:246.48px;top:82.24px" class="cls_006"><span class="cls_006">)</span></div>
+<div style="position:absolute;left:258.48px;top:82.24px" class="cls_006"><span class="cls_006">f</span></div>
+<div style="position:absolute;left:146.64px;top:93.76px" class="cls_006"><span class="cls_006">System.out.println("a  warm  smile");</span></div>
+<div style="position:absolute;left:105.36px;top:137.16px" class="cls_005"><span class="cls_005">34. There's no virtual keyword in Java because all non-static methods always use dynamic</span></div>
+<div style="position:absolute;left:122.40px;top:148.68px" class="cls_005"><span class="cls_005">binding. In Java, the programmer doesn't have to decide whether to use dynamic</span></div>
+<div style="position:absolute;left:122.40px;top:160.44px" class="cls_005"><span class="cls_005">binding. The reason </span><span class="cls_008">virtual </span><span class="cls_005">exists in C+ + is so you can leave it off for a slight increase</span></div>
+<div style="position:absolute;left:122.64px;top:172.20px" class="cls_005"><span class="cls_005">in efficiency when you're tuning for performance (or, put another way, "If you don't use</span></div>
+<div style="position:absolute;left:122.64px;top:183.72px" class="cls_005"><span class="cls_005">it, you don't pay for it"), which often results in confusion and unpleasant surprises. The</span></div>
+<div style="position:absolute;left:122.64px;top:195.48px" class="cls_008"><span class="cls_008">f</span></div>
+<div style="position:absolute;left:122.64px;top:195.48px" class="cls_008"><span class="cls_008">i</span></div>
+<div style="position:absolute;left:129.36px;top:195.48px" class="cls_008"><span class="cls_008">nal </span><span class="cls_005">keyword provides some latitude for efficiency tuning — it tells the compiler that this</span></div>
+<div style="position:absolute;left:122.64px;top:207.24px" class="cls_005"><span class="cls_005">method cannot be overridden, and thus that it may be statically bound (and made inline,</span></div>
+<div style="position:absolute;left:122.64px;top:218.76px" class="cls_005"><span class="cls_005">thus using the equivalent of a C++ </span><span class="cls_008">non-virtual </span><span class="cls_005">call). These optimizations are up to the</span></div>
+<div style="position:absolute;left:122.64px;top:230.52px" class="cls_005"><span class="cls_005">compiler.</span></div>
+<div style="position:absolute;left:105.36px;top:250.92px" class="cls_005"><span class="cls_005">35. Java doesn't provide multiple inheritance (MI), at least not in the same sense that C++</span></div>
+<div style="position:absolute;left:122.64px;top:262.68px" class="cls_005"><span class="cls_005">does. Like </span><span class="cls_008">protected, </span><span class="cls_005">MI seems like a good idea but you know you need it only when</span></div>
+<div style="position:absolute;left:122.64px;top:274.44px" class="cls_005"><span class="cls_005">you are face to face with a certain design problem. Since Java uses a singly-rooted</span></div>
+<div style="position:absolute;left:122.64px;top:285.96px" class="cls_005"><span class="cls_005">hierarchy, you'll probably run into fewer situations in which MI is necessary. The</span></div>
+<div style="position:absolute;left:122.64px;top:297.72px" class="cls_008"><span class="cls_008">interface </span><span class="cls_005">keyword takes care of combining multiple interfaces.</span></div>
+<div style="position:absolute;left:105.36px;top:318.12px" class="cls_005"><span class="cls_005">36. Run-time type identification functionality is quite similar to that in C+ +. To get</span></div>
+<div style="position:absolute;left:122.64px;top:329.88px" class="cls_005"><span class="cls_005">information about handle X, you can say, for example:</span></div>
+<div style="position:absolute;left:122.64px;top:342.16px" class="cls_006"><span class="cls_006">X. getClass () .getName 0 ;</span></div>
+<div style="position:absolute;left:122.40px;top:353.16px" class="cls_005"><span class="cls_005">To perform a type</span><span class="cls_011">-</span><span class="cls_005">safe downcast you </span><span class="cls_006">say:</span></div>
+<div style="position:absolute;left:122.88px;top:365.44px" class="cls_006"><span class="cls_006">derived  d</span></div>
+<div style="position:absolute;left:181.20px;top:365.44px" class="cls_006"><span class="cls_006">=</span></div>
+<div style="position:absolute;left:195.36px;top:365.44px" class="cls_006"><span class="cls_006">(derived)base;</span></div>
+<div style="position:absolute;left:121.20px;top:376.44px" class="cls_005"><span class="cls_005">just like an old-style C cast. The compiler automatically invokes the dynamic casting</span></div>
+<div style="position:absolute;left:122.64px;top:387.96px" class="cls_005"><span class="cls_005">mechanism without requiring extra syntax. Although this doesn't have the benefit of</span></div>
+<div style="position:absolute;left:122.88px;top:399.72px" class="cls_005"><span class="cls_005">easy location of casts as in C+ + "new casts," Java checks usage and throws exceptions</span></div>
+<div style="position:absolute;left:122.88px;top:411.48px" class="cls_005"><span class="cls_005">so it won't allow bad casts like C++ does.</span></div>
+<div style="position:absolute;left:105.36px;top:431.88px" class="cls_005"><span class="cls_005">37.</span></div>
+<div style="position:absolute;left:122.64px;top:431.88px" class="cls_005"><span class="cls_005">Exception handling in Java is different because there are no destructors. A </span><span class="cls_008">finally </span><span class="cls_005">clause</span></div>
+<div style="position:absolute;left:122.64px;top:443.40px" class="cls_005"><span class="cls_005">can be added to force execution of statements that perform necessary cleanup. All</span></div>
+<div style="position:absolute;left:122.88px;top:455.16px" class="cls_005"><span class="cls_005">exceptions in Java are inherited from the base class </span><span class="cls_008">Throwable, </span><span class="cls_005">so you're guaranteed a</span></div>
+<div style="position:absolute;left:122.64px;top:466.92px" class="cls_005"><span class="cls_005">common interface.</span></div>
+<div style="position:absolute;left:122.64px;top:479.20px" class="cls_006"><span class="cls_006">public  void  f(Obj  b)   throws  I0Exception</span></div>
+<div style="position:absolute;left:357.84px;top:479.20px" class="cls_006"><span class="cls_006">{</span></div>
+<div style="position:absolute;left:133.92px;top:490.96px" class="cls_006"><span class="cls_006">myresource  mr</span></div>
+<div style="position:absolute;left:216.24px;top:490.96px" class="cls_006"><span class="cls_006">=  b.createResource();</span></div>
+<div style="position:absolute;left:134.64px;top:502.48px" class="cls_006"><span class="cls_006">try</span></div>
+<div style="position:absolute;left:159.36px;top:502.72px" class="cls_006"><span class="cls_006">{</span></div>
+<div style="position:absolute;left:145.68px;top:514.24px" class="cls_006"><span class="cls_006">mr.UseResource();</span></div>
+<div style="position:absolute;left:146.40px;top:526.00px" class="cls_006"><span class="cls_006">catch</span></div>
+<div style="position:absolute;left:183.60px;top:525.76px" class="cls_006"><span class="cls_006">(MyException  e)   f</span></div>
+<div style="position:absolute;left:146.88px;top:537.52px" class="cls_006"><span class="cls_006">//  handle my  exception</span></div>
+<div style="position:absolute;left:135.84px;top:549.28px" class="cls_006"><span class="cls_006">I catch</span></div>
+<div style="position:absolute;left:183.60px;top:549.28px" class="cls_006"><span class="cls_006">(Throwable  e)</span></div>
+<div style="position:absolute;left:264.48px;top:549.28px" class="cls_006"><span class="cls_006">{</span></div>
+<div style="position:absolute;left:146.88px;top:560.80px" class="cls_006"><span class="cls_006">//  handle  all  other  exceptions</span></div>
+<div style="position:absolute;left:146.64px;top:572.56px" class="cls_006"><span class="cls_006">finally  f</span></div>
+<div style="position:absolute;left:145.68px;top:584.08px" class="cls_006"><span class="cls_006">mr.dispose();</span></div>
+<div style="position:absolute;left:228.48px;top:584.32px" class="cls_006"><span class="cls_006">//  special  cleanup</span></div>
+<div style="position:absolute;left:105.60px;top:627.24px" class="cls_005"><span class="cls_005">38.</span></div>
+<div style="position:absolute;left:122.64px;top:627.24px" class="cls_005"><span class="cls_005">Exception specifications in Java are vastly superior to those in C+ +. Instead of the C++</span></div>
+<div style="position:absolute;left:122.64px;top:639.00px" class="cls_005"><span class="cls_005">approach of calling a function at run-time when the wrong exception is thrown, Java</span></div>
+<div style="position:absolute;left:122.88px;top:650.52px" class="cls_005"><span class="cls_005">exception specifications are checked and enforced at compile-time. In addition, overridden</span></div>
+<div style="position:absolute;left:122.64px;top:662.28px" class="cls_005"><span class="cls_005">methods must conform to the exception specification of the base-class version of that</span></div>
+<div style="position:absolute;left:122.64px;top:674.04px" class="cls_005"><span class="cls_005">method: they can throw the specified exceptions or exceptions derived from those. This</span></div>
+<div style="position:absolute;left:122.40px;top:685.56px" class="cls_005"><span class="cls_005">provides much more robust exception-handling code.</span></div>
+<div style="position:absolute;left:70.32px;top:715.36px" class="cls_007"><span class="cls_007">822</span></div>
+<div style="position:absolute;left:161.04px;top:715.36px" class="cls_007"><span class="cls_007">Thinking in Java</span></div>
+<div style="position:absolute;left:339.12px;top:715.36px" class="cls_007"><span class="cls_007"> </span><A HREF="http://www.bruceeckel.com/">www.BruceEckel.com</A> </div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:5112px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:105.60px;top:69.96px" class="cls_005"><span class="cls_005">39. Java has method overloading, but no operator overloading. The </span><span class="cls_012">String </span><span class="cls_005">class does use the</span></div>
+<div style="position:absolute;left:123.60px;top:81.72px" class="cls_005"><span class="cls_005">+ and +</span><span class="cls_014">=</span><span class="cls_005"> operators to concatenate strings and </span><span class="cls_012">String </span><span class="cls_005">expressions use automatic type</span></div>
+<div style="position:absolute;left:122.64px;top:93.48px" class="cls_005"><span class="cls_005">conversion, but that's a special built-in case.</span></div>
+<div style="position:absolute;left:105.60px;top:113.64px" class="cls_012"><span class="cls_012">40 . </span><span class="cls_005">The </span><span class="cls_012">const </span><span class="cls_005">issues in C++ are avoided in Java by convention. You pass only handles to</span></div>
+<div style="position:absolute;left:122.64px;top:125.40px" class="cls_005"><span class="cls_005">objects and local copies are never made for you automatically. If you want the equivalent</span></div>
+<div style="position:absolute;left:122.64px;top:137.16px" class="cls_005"><span class="cls_005">of C+ +'s pass-by-value, you call </span><span class="cls_012">clone( ) </span><span class="cls_005">to produce a local copy of the argument</span></div>
+<div style="position:absolute;left:123.12px;top:148.92px" class="cls_005"><span class="cls_005">(although the </span><span class="cls_012">clone( ) </span><span class="cls_005">mechanism is somewhat poorly designed — see Chapter 12).</span></div>
+<div style="position:absolute;left:122.64px;top:160.44px" class="cls_005"><span class="cls_005">There's no copy-constructor that's automatically called.</span></div>
+<div style="position:absolute;left:122.40px;top:172.20px" class="cls_005"><span class="cls_005">To create a compile-time constant value, you say, for example:</span></div>
+<div style="position:absolute;left:123.36px;top:185.24px" class="cls_011"><span class="cls_011">static  final  int  SIZE</span></div>
+<div style="position:absolute;left:251.28px;top:185.24px" class="cls_011"><span class="cls_011">=  255;</span></div>
+<div style="position:absolute;left:123.36px;top:197.00px" class="cls_011"><span class="cls_011">static  final  int  BSIZE</span></div>
+<div style="position:absolute;left:257.04px;top:197.00px" class="cls_011"><span class="cls_011">=</span></div>
+<div style="position:absolute;left:269.28px;top:197.00px" class="cls_011"><span class="cls_011">8</span></div>
+<div style="position:absolute;left:281.04px;top:197.00px" class="cls_011"><span class="cls_011">* </span><span class="cls_013"> SIZE;</span></div>
+<div style="position:absolute;left:105.12px;top:216.12px" class="cls_005"><span class="cls_005">41.</span></div>
+<div style="position:absolute;left:122.88px;top:215.88px" class="cls_005"><span class="cls_005">Because of security issues, programming an "application" is quite different from</span></div>
+<div style="position:absolute;left:122.64px;top:227.64px" class="cls_005"><span class="cls_005">programming an "applet." A significant issue is that an applet won't let you write to</span></div>
+<div style="position:absolute;left:122.64px;top:239.40px" class="cls_005"><span class="cls_005">disk, because that would allow a program downloaded from an unknown machine to</span></div>
+<div style="position:absolute;left:122.64px;top:250.92px" class="cls_005"><span class="cls_005">trash your disk. This changes somewhat with Java 1.1 digital signing, which allows you</span></div>
+<div style="position:absolute;left:122.64px;top:262.68px" class="cls_005"><span class="cls_005">to unequivocally </span><span class="cls_007">know </span><span class="cls_005">everyone that wrote all the programs that have special access to</span></div>
+<div style="position:absolute;left:122.40px;top:274.68px" class="cls_005"><span class="cls_005">your system (one of which might have trashed your disk; you still have to figure out</span></div>
+<div style="position:absolute;left:122.40px;top:286.20px" class="cls_005"><span class="cls_005">which one and what to do about it.). Java 1.2 also promises more power for applets</span></div>
+<div style="position:absolute;left:105.12px;top:306.84px" class="cls_005"><span class="cls_005">42.</span></div>
+<div style="position:absolute;left:122.88px;top:306.84px" class="cls_005"><span class="cls_005">Since Java can be too restrictive in some cases, you could be prevented from doing</span></div>
+<div style="position:absolute;left:122.64px;top:318.36px" class="cls_005"><span class="cls_005">important tasks such as directly accessing hardware. Java solves this with </span><span class="cls_007">native methods</span></div>
+<div style="position:absolute;left:122.64px;top:330.36px" class="cls_005"><span class="cls_005">that allow you to call a function written in another language (currently only C and C++</span></div>
+<div style="position:absolute;left:122.64px;top:341.88px" class="cls_005"><span class="cls_005">are supported). Thus, you can always solve a platform-specific problem (in a relatively</span></div>
+<div style="position:absolute;left:122.64px;top:353.64px" class="cls_005"><span class="cls_005">non-portable fashion, but then that code is isolated). Applets cannot call native methods,</span></div>
+<div style="position:absolute;left:122.64px;top:365.16px" class="cls_005"><span class="cls_005">only applications.</span></div>
+<div style="position:absolute;left:105.12px;top:385.80px" class="cls_005"><span class="cls_005">43.</span></div>
+<div style="position:absolute;left:122.64px;top:385.80px" class="cls_005"><span class="cls_005">Java has built-in support for comment documentation, so the source code file can also</span></div>
+<div style="position:absolute;left:122.64px;top:397.32px" class="cls_005"><span class="cls_005">contain its own documentation, which is stripped out and reformatted into HTML via a</span></div>
+<div style="position:absolute;left:122.88px;top:409.08px" class="cls_005"><span class="cls_005">separate program. This is a boon for documentation maintenance and use.</span></div>
+<div style="position:absolute;left:105.12px;top:429.48px" class="cls_005"><span class="cls_005">44.</span></div>
+<div style="position:absolute;left:122.88px;top:429.48px" class="cls_005"><span class="cls_005">Java contains standard libraries for solving specific tasks. C+ + relies on non-standard</span></div>
+<div style="position:absolute;left:122.64px;top:441.00px" class="cls_005"><span class="cls_005">third-party libraries. These tasks include (or will soon include):</span></div>
+<div style="position:absolute;left:122.40px;top:452.76px" class="cls_005"><span class="cls_005">— Networking</span></div>
+<div style="position:absolute;left:122.40px;top:464.52px" class="cls_005"><span class="cls_005">— Database Connection (via JDBC)</span></div>
+<div style="position:absolute;left:122.40px;top:476.04px" class="cls_005"><span class="cls_005">— Multithreading</span></div>
+<div style="position:absolute;left:122.40px;top:487.80px" class="cls_005"><span class="cls_005">— Distributed Objects (via RMI and CORBA)</span></div>
+<div style="position:absolute;left:122.40px;top:499.32px" class="cls_005"><span class="cls_005">— Compression</span></div>
+<div style="position:absolute;left:122.40px;top:511.08px" class="cls_005"><span class="cls_005">— Commerce</span></div>
+<div style="position:absolute;left:122.40px;top:522.84px" class="cls_005"><span class="cls_005">The availability and standard nature of these libraries allow for more rapid application</span></div>
+<div style="position:absolute;left:122.64px;top:534.36px" class="cls_005"><span class="cls_005">development.</span></div>
+<div style="position:absolute;left:105.12px;top:555.00px" class="cls_005"><span class="cls_005">45.</span></div>
+<div style="position:absolute;left:122.64px;top:554.76px" class="cls_005"><span class="cls_005">Java 1.1 includes the Java Beans standard, which is a way to create components that can</span></div>
+<div style="position:absolute;left:122.16px;top:566.52px" class="cls_005"><span class="cls_005">be used in visual programming environments. This promotes visual components that</span></div>
+<div style="position:absolute;left:122.64px;top:578.28px" class="cls_005"><span class="cls_005">can be used under all vendor's development environments. Since you aren't tied to a</span></div>
+<div style="position:absolute;left:122.40px;top:589.80px" class="cls_005"><span class="cls_005">particular vendor's design for visual components, this should result in greater selection</span></div>
+<div style="position:absolute;left:122.64px;top:601.56px" class="cls_005"><span class="cls_005">and availability of components. In addition, the design for Java Beans is simpler for</span></div>
+<div style="position:absolute;left:122.40px;top:613.08px" class="cls_005"><span class="cls_005">programmers to understand; vendor-specific component frameworks tend to involve a</span></div>
+<div style="position:absolute;left:122.88px;top:624.84px" class="cls_005"><span class="cls_005">steeper learning curve.</span></div>
+<div style="position:absolute;left:105.12px;top:645.24px" class="cls_005"><span class="cls_005">46.</span></div>
+<div style="position:absolute;left:122.64px;top:645.24px" class="cls_005"><span class="cls_005">If the access to a Java handle fails, an exception is thrown. This test doesn't have to</span></div>
+<div style="position:absolute;left:122.64px;top:657.00px" class="cls_005"><span class="cls_005">occur right before the use of a handle; the Java specification just says that the exception</span></div>
+<div style="position:absolute;left:122.64px;top:668.52px" class="cls_005"><span class="cls_005">must somehow be thrown. Many C++ runtime systems can also throw exceptions for</span></div>
+<div style="position:absolute;left:122.16px;top:680.28px" class="cls_005"><span class="cls_005">bad pointers.</span></div>
+<div style="position:absolute;left:69.12px;top:715.36px" class="cls_007"><span class="cls_007">Appendix B: Comparing C+ + and Java</span></div>
+<div style="position:absolute;left:412.32px;top:715.36px" class="cls_007"><span class="cls_007">823</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:5964px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:105.12px;top:69.96px" class="cls_005"><span class="cls_005">47. Generally, Java is more robust, via:</span></div>
+<div style="position:absolute;left:122.40px;top:81.72px" class="cls_005"><span class="cls_005">— Object handles initialized to </span><span class="cls_008">null </span><span class="cls_005">(a keyword)</span></div>
+<div style="position:absolute;left:122.40px;top:93.24px" class="cls_005"><span class="cls_005">— Handles are always checked and exceptions are thrown for failures</span></div>
+<div style="position:absolute;left:122.40px;top:105.00px" class="cls_005"><span class="cls_005">— All array accesses are checked for bounds violations</span></div>
+<div style="position:absolute;left:122.40px;top:116.76px" class="cls_005"><span class="cls_005">— Automatic garbage collection prevents memory leaks</span></div>
+<div style="position:absolute;left:122.40px;top:128.28px" class="cls_005"><span class="cls_005">— Clean, relatively fool-proof exception handling</span></div>
+<div style="position:absolute;left:122.40px;top:140.04px" class="cls_005"><span class="cls_005">— Simple language support for multithreading</span></div>
+<div style="position:absolute;left:122.40px;top:151.56px" class="cls_005"><span class="cls_005">— Bytecode verification of network applets</span></div>
+<div style="position:absolute;left:70.56px;top:715.12px" class="cls_007"><span class="cls_007">824</span></div>
+<div style="position:absolute;left:161.28px;top:715.36px" class="cls_007"><span class="cls_007">'Thinking in Java</span></div>
+<div style="position:absolute;left:339.12px;top:715.36px" class="cls_007"><span class="cls_007"> </span><A HREF="http://www.bruceeckel.com/">www.BruceEckel.com</A> </div>
+</div>
+
+</body>
+</html>
